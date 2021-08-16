@@ -1,8 +1,8 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
+# Copyright (C) 2020-2021 by TeamSpeedo@Github, < https://github.com/TeamSpeedo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/TeamSpeedo/FridayUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
+# Please see < https://github.com/TeamSpeedo/blob/master/LICENSE >
 #
 # All rights reserved.
 
@@ -966,11 +966,11 @@ async def ujwal_s_ticker(client, message):
 
 def choose_random_font():
     fonts_ = [
-        "https://github.com/DevsExpo/FONTS/raw/main/Ailerons-Typeface.otf",
-        "https://github.com/DevsExpo/FONTS/raw/main/Toxico.otf",
-        "https://github.com/DevsExpo/FONTS/raw/main/againts.otf",
-        "https://github.com/DevsExpo/FONTS/raw/main/go3v2.ttf",
-        "https://github.com/DevsExpo/FONTS/raw/main/vermin_vibes.ttf",
+        "https://github.com/TeamSpeedo/FONTS/raw/main/Ailerons-Typeface.otf",
+        "https://github.com/TeamSpeedo/FONTS/raw/main/Toxico.otf",
+        "https://github.com/TeamSpeedo/FONTS/raw/main/againts.otf",
+        "https://github.com/TeamSpeedo/FONTS/raw/main/go3v2.ttf",
+        "https://github.com/TeamSpeedo/FONTS/raw/main/vermin_vibes.ttf",
     ]
     random_s = random.choice(fonts_)
     return wget.download(random_s)
