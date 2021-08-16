@@ -432,9 +432,9 @@ async def fetch_audio(client, message):
         warner_bros = await message.reply_to_message.download(
             progress=progress, progress_args=(message, c_time, f"`Downloading Audio!`")
         )
-        stark_cmd = f"ffmpeg -i {warner_bros} -map 0:a friday.mp3"
+        stark_cmd = f"ffmpeg -i {warner_bros} -map 0:a speedo.mp3"
         await runcmd(stark_cmd)
-        final_warner = "friday.mp3"
+        final_warner = "speedo.mp3"
     elif warner_stark.audio:
         await message.edit("`Download Started !`")
         final_warner = await message.reply_to_message.download(
