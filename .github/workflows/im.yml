@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "https://github.com/DevsExpo/FridayUserBot"
+          find: "DevsExpo"
 
-          replace: "https://github.com/TeamSpeedo/Speedo"
+          replace: "TeamSpeedo"
 
       - name: Create Pull Request
 
