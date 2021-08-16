@@ -198,7 +198,7 @@ async def st(client, message):
     if not message.reply_to_message.photo:
         await pablo.edit(engine.get_string("FILE_TOOLS_6"))
         return
-    await message.reply_to_message.download(file_name="./main_startup/Cache/thumb.jpg")
+    await message.reply_to_message.download(file_name="./main_start/Cache/thumb.jpg")
     await pablo.edit(
         engine.get_string("FILE_TOOLS_7")
     )
@@ -231,7 +231,7 @@ async def upload(client, message):
         await pablo.edit(engine.get_string("F_404"))
         return
     file_name = os.path.basename(file)
-    send_as_thumb = bool(os.path.exists("./main_startup/Cache/thumb.jpg"))
+    send_as_thumb = bool(os.path.exists("./main_start/Cache/thumb.jpg"))
     size = os.stat(file).st_size
     if file.endswith(image_ext):
         # assume its image file
@@ -249,7 +249,7 @@ async def upload(client, message):
             await client.send_video(
                 message.chat.id,
                 file,
-                thumb="./main_startup/Cache/thumb.jpg",
+                thumb="./main_start/Cache/thumb.jpg",
                 caption=capt,
                 progress=progress,
                 progress_args=(pablo, c_time, f"`Uploading {file_name}!`", file_name),
@@ -268,7 +268,7 @@ async def upload(client, message):
             await client.send_animation(
                 message.chat.id,
                 file,
-                thumb="./main_startup/Cache/thumb.jpg",
+                thumb="./main_start/Cache/thumb.jpg",
                 caption=capt,
                 progress=progress,
                 progress_args=(pablo, c_time, f"`Uploading {file_name}!`", file_name),
@@ -287,7 +287,7 @@ async def upload(client, message):
             await client.send_audio(
                 message.chat.id,
                 file,
-                thumb="./main_startup/Cache/thumb.jpg",
+                thumb="./main_start/Cache/thumb.jpg",
                 caption=capt,
                 progress=progress,
                 progress_args=(pablo, c_time, f"`Uploading {file_name}!`", file_name),
@@ -313,7 +313,7 @@ async def upload(client, message):
             await client.send_document(
                 message.chat.id,
                 file,
-                thumb="./main_startup/Cache/thumb.jpg",
+                thumb="./main_start/Cache/thumb.jpg",
                 caption=capt,
                 progress=progress,
                 progress_args=(pablo, c_time, f"`Uploading {file_name}!`", file_name),

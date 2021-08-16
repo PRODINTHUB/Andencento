@@ -116,7 +116,7 @@ async def give_sysinfo(client, message):
 async def wow_restart(client, message):
     engine = message.Engine
     await edit_or_reply(message, engine.get_string("RESTART"))
-    args = [sys.executable, "-m", "main_startup"]
+    args = [sys.executable, "-m", "main_start"]
     execle(sys.executable, *args, environ)
     exit()
     return

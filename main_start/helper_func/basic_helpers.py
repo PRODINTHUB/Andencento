@@ -18,7 +18,7 @@ from pyrogram.types import (
 )
 from main_start import Speedo, Speedo2, Speedo3, Speedo4
 from database.sudodb import sudo_list
-from main_startup.config_var import Config
+from main_start.config_var import Config
 import multiprocessing
 import mimetypes
 import functools

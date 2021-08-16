@@ -63,7 +63,7 @@ async def update_it(client, message):
             repo.git.reset("--hard", "FETCH_HEAD")
         await run_cmd("pip3 install --no-cache-dir -r requirements.txt")
         await msg_.edit(engine.get_string("UPDATED"))
-        args = [sys.executable, "-m", "main_startup"]
+        args = [sys.executable, "-m", "main_start"]
         execle(sys.executable, *args, environ)
         exit()
         return
