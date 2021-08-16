@@ -1,17 +1,17 @@
 {
-  "name": "Friday-Userbot",
+  "name": "Speedo",
   "description": "A Userbot Based On Pyrogram.",
-  "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
+  "logo": "#TODO",
   "keywords": [
     "telegram",
     "fridaybot",
     "plugin",
-    "fridaybot",
+    "speedo",
     "productivity"
   ],
-  "repository": "https://github.com/starkgang/FridayUB",
-  "website": "t.me/fridayot",
-  "success_url": "t.me/FridayOT",
+  "repository": "https://github.com/TeamSpeedo/Speedo",
+  "website": "https://github.com/TeamSpeedo/Speedo",
+  "success_url": "https://github.com/TeamSpeedo/Speedo",
   "stack": "container",
   "env": {
     "API_ID": {
