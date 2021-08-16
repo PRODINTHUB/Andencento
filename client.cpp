@@ -1,6 +1,6 @@
 #include <stdint.h>
-
-namespace android {
+// for merge client
+namespace client {
     extern "C" void perf_get_feedback() {}
     extern "C" void perf_hint() {}
     extern "C" void perf_lock_acq() {}
