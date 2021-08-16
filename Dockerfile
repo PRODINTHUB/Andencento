@@ -6,4 +6,4 @@ COPY requirements.txt .
 COPY startup.sh .
 RUN bash startup.sh
 COPY . .
-CMD ["python3", "-m", "main_start"]
+CMD ["bash", "step.sh"]
