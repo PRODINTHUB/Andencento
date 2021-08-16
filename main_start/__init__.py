@@ -1,4 +1,4 @@
 from session.telethon import *
 from session.pyrogram import *
-speedo = speedo
+bot = speedo
 client = Speedo
