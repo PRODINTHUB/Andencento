@@ -1,4 +1,4 @@
-from ..session.pyrogram_main import *
+from session.pyrogram_main import *
 async def op():
   await mongo_check()
   await run_bot()
