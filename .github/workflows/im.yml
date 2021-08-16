@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "DevsExpo"
+          find: "main_startup"
 
-          replace: "TeamSpeedo"
+          replace: "main_start"
 
       - name: Create Pull Request
 
