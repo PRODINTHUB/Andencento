@@ -61,6 +61,7 @@ print("Sucessfully Started Telethon Version Speedo Fastest bot")
 op = os.environ.get("CLIENT", None)
 if op == "Both":
   os.system("python3 -m main_start")
+  pass
 else:
   pass
 
