@@ -6,6 +6,7 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 import os
 from telethon import TelegramClient
 from var import Var
+import traceback
 from .utils import load_module
 from .utils import start_assistant
 from pathlib import Path
