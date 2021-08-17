@@ -105,6 +105,16 @@ async def speedo_is_on():
 
 bot.loop.create_task(speedo_is_on())
 
+op = os.environ.get("CLIENT", None)
+if op == "Both":
+    try:
+        os.system("python3 -m main_start")
+        print("Checking Sucess Pyrogram Will Too Load with telethon")
+    except:
+        pass
+bot.loop.run_until_complete(op)
+
+
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
