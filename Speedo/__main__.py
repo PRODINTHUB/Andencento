@@ -107,8 +107,9 @@ if op == "Both":
   os.system("python3 -m main_start")
   print("Checking Sucess Pyrogram Will Too Load with telethon")
 else:
+    print("Checking Sucess Pyrogram Not Loading")
     tbot.run_until_disconnect()
-  print("Checking Sucess Pyrogram Not Loading")
+  
 
 bot.loop.run_until_complete(op)
 
