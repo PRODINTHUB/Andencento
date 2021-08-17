@@ -314,5 +314,5 @@ else:
         DB_URI = None
         # Add your UniBorg Vars Here
 # op
-class Development(Var):
+class Development(Config):
     LOGGER = True
