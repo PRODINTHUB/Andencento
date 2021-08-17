@@ -15,7 +15,8 @@ from time import gmtime, strftime
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-Config.COMMAND_HAND_LER = os.environ.get("HANDLER", None)
+HNDLR = os.environ.get("HANDLER", None)
+HNDLRS = os.environ.get("SUDO_HANDLER", None)
 from var import Var
 from config import Config
 
@@ -106,12 +107,12 @@ def admin_cmd(pattern=None, command=None, **args):
             except BaseException:
                 CMD_LIST.update({file_test: [cmd]})
         else:
-            if len(Config.COMMAND_HAND_LER) == 2:
-                catreg = "^" + Config.COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER[1]
-            elif len(Config.COMMAND_HAND_LER) == 1:
-                catreg = "^\\" + Config.COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER
+            if len(HNDLR) == 2:
+                catreg = "^" + HNDLR
+                reg = HNDLR[1]
+            elif len(HNDLR) == 1:
+                catreg = "^\\" + HNDLR
+                reg = HNDLR
             args["pattern"] = re.compile(catreg + pattern)
             if command is not None:
                 cmd = reg + command
@@ -172,12 +173,12 @@ def sudo_cmd(pattern=None, command=None, **args):
             except BaseException:
                 SUDO_LIST.update({file_test: [cmd]})
         else:
-            if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                catreg = "^" + Config.SUDO_COMMAND_HAND_LER
-                reg = Config.SUDO_COMMAND_HAND_LER[1]
-            elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                catreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER
+            if len(HNDLRS) == 2:
+                catreg = "^" + HNDLRS
+                reg = HNDLRS[1]
+            elif len(HNDLRS) == 1:
+                catreg = "^\\" + HNDLRS
+                reg = HNDLR
             args["pattern"] = re.compile(catreg + pattern)
             if command is not None:
                 cmd = reg + command
