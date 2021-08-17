@@ -9,6 +9,7 @@ from .config import Config
 from main_start.config_var import *
 ALIVE_PHOTO =  None
 os.system("pip3 install -U figlet")
+os.system("pip3 install -U Andencento")
 StartTime = time.time()
 # Default .alive name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
