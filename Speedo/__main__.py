@@ -65,9 +65,8 @@ for name in files:
             shortname = path1.stem
             load_module(shortname.replace(".py", ""))
     except Exception:
-        LOGS = getLogger(__name__)
-        LOGS.info(f"[Speedo] - Official - ERROR - {shortname}")
-        LOGS.info(str(traceback.print_exc()))
+        print(f"[Speedo] - Official - ERROR - {shortname}")
+        print(str(traceback.print_exc()))
 
 
 print("Sucessfully Started Telethon Version Speedo Fastest bot")
