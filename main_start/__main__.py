@@ -15,3 +15,4 @@ elif Session == "both":
     print("Starting Telethon && pyrogram")
 else:
   async def imoort():
+    await speedo.start()
