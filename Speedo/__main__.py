@@ -108,7 +108,7 @@ bot.loop.create_task(speedo_is_on())
 op = os.environ.get("CLIENT", None)
 if op == "Both":
     try:
-        os.system("python3 -m main_start")
+        await os.system("python3 -m main_start")
         print("Checking Sucess Pyrogram Will Too Load with telethon")
     except:
         pass
