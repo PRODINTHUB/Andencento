@@ -13,7 +13,7 @@ class Config(object):
     LOGGER = True
     ABUSE = os.environ.get("ABUSE", None)
     ALIVE_MSG = os.environ.get("ALIVE_MSG", "⚡ ʟɛɢɛռɖaʀʏ ᴀғ Speedo ⚡")
-    ALIVE_PIC = os.environ.get("ALIVE_PIC", "https://telegra.ph/file/f62e50245639f24fd955b.jpg")
+    ALIVE_PIC = os.environ.get("ALIVE_IMG", None)
     ANTI_FLOOD_WARN_MODE = ChatBannedRights(
         until_date=None,
         view_messages=None,
@@ -85,7 +85,7 @@ class Config(object):
     REMOVE_BG_API = os.environ.get("REMOVE_BG_API", None)
     SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
     STICKER_PACKNAME = os.environ.get("STICKER_PACKNAME", None)
-    SPEEDOBOT_SESSION = os.environ.get("SPEEDOBOT_SESSION", None)
+    SPEEDOBOT_SESSION = os.environ.get("TELETHON_SESSION", None)
     SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"\.")
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
     TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
