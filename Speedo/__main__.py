@@ -107,10 +107,9 @@ bot.loop.create_task(speedo_is_on())
 async def iampro():
     op = os.environ.get("CLIENT", None)
     if op == "Both":
-        try:
-            await os.system("python3 -m main_start")
-        except BaseException:
-            pass
+        await os.system("python3 -m main_start")
+    else:
+        print(" ")
 bot.loop.run_until_complete(iampro)
 
 
