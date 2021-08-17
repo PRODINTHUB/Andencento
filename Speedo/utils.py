@@ -35,8 +35,8 @@ def load_module(shortname):
     elif shortname.endswith("_"):
         import session.client.utils
 
-        path = Path(f"tele/plugins/{shortname}.py")
-        name = "tele.plugins.{}".format(shortname)
+        path = Path(f"Speedo/plugins/{shortname}.py")
+        name = "Speedo.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -44,13 +44,14 @@ def load_module(shortname):
     else:
         import session.client.utils
 
-        path = Path(f"tele/plugins/{shortname}.py")
-        name = "tele.plugins.{}".format(shortname)
+        path = Path(f"Speedo/plugins/{shortname}.py")
+        name = "Speedo.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
         mod.tgbot = bot.tgbot
         mod.Var = Var
+        mod.speedo = speedo
         mod.xbot = xbot
         mod.command = command
         mod.logger = logging.getLogger(shortname)
@@ -63,7 +64,7 @@ def load_module(shortname):
         sys.modules["userbot.events"] = session.client.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["tele.plugins." + shortname] = mod
+        sys.modules["Speedo.plugins." + shortname] = mod
         LOGS.info("Successfully imported " + shortname)
 
 def remove_plugin(shortname):
@@ -74,7 +75,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except BaseException:
-            name = f"tele.plugins.{shortname}"
+            name = f"Speedo.plugins.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
