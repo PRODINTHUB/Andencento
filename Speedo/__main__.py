@@ -102,7 +102,16 @@ async def speedo_is_on():
 #        await bot(JoinChannelRequest("@Speedo_Chat"))
 #    except BaseException:
 #        pass
+op = os.environ.get("CLIENT", None)
+if op == "Both":
+  os.system("python3 -m main_start")
+  print("Checking Sucess Pyrogram Will Too Load with telethon")
+else:
+  print("Checking Sucess Pyrogram Not Loading")
+  pass
 
+
+bot.loop.run_until_complete(op)
 
 bot.loop.create_task(speedo_is_on())
 
