@@ -55,10 +55,15 @@ import glob
 path = 'Speedo/plugins/*.py'
 files = glob.glob(path)
 for name in files:
-    with open(name) as f:
-        path1 = Path(f.name)
-        shortname = path1.stem
-        load_module(shortname.replace(".py", ""))
+    try:
+        with open(name) as f:
+            path1 = Path(f.name)
+            shortname = path1.stem
+            load_module(shortname.replace(".py", ""))
+    except Exception:
+        LOGS.info(f"[Speedo] - Official - ERROR - {shortname}")
+        LOGS.info(str(traceback.print_exc()))
+
 
 print("Sucessfully Started Telethon Version Speedo Fastest bot")
 
