@@ -1,4 +1,4 @@
-  
+c  
 import os
 import sys
 import time
@@ -77,6 +77,21 @@ if bool(ENV):
         BOTLOG_CHATID = int(BOTLOG_CHATID)
     except:
         pass
+
+    # Userbot logging feature switch.
+    BOTLOG = sb(os.environ.get("BOTLOG", "False"))
+    LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
+    PATTERNS = os.environ.get("PATTERNS", ".;!,")
+    COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
+    
+    # Custom Module
+    CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
+
+    # Logging channel/group configuration.
+    BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", None)
+    try:
+        BOTLOG_CHATID = int(BOTLOG_CHATID)
+    except:
 
     # Userbot logging feature switch.
     BOTLOG = sb(os.environ.get("BOTLOG", "False"))
