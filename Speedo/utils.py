@@ -22,7 +22,7 @@ from Speedo.variables import Var
 
 from Speedo import *
 
-from Speedo.process import CancelProcess
+from Speedo.exceptions import CancelProcess
 
 from Speedo.config import Config # Main Imports from here
 
