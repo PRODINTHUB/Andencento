@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "bot.on"
+          find: "tgspeedo"
 
-          replace: "speedo.on"
+          replace: "tgbot"
 
       - name: Create Pull Request
 
