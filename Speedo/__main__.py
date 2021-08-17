@@ -58,9 +58,14 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 print("Sucessfully Started Telethon Version Speedo Fastest bot")
-
+op = os.environ.get("CLIENT", None)
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
+
+if op == "Both":
+  os.system("python3 -m main_start")
+else:
+  pass
