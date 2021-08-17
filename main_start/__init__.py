@@ -1,4 +1,5 @@
-from .__main__ import Session
+import os
+Session = os.environ.get("Client", None)
 if Session == "Tele":
   from session.telethon import *
 else:
