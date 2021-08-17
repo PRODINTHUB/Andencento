@@ -11,7 +11,7 @@ from .utils import start_assistant
 from pathlib import Path
 import asyncio
 import telethon.utils
-
+from Speedo import LOGS
 
 
                     
