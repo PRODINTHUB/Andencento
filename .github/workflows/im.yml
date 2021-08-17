@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "main_startup"
+          find: "fridayuserbot"
 
-          replace: "main_start"
+          replace: "Andencento"
 
       - name: Create Pull Request
 
