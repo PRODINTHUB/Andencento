@@ -25,7 +25,7 @@ from Speedo import *
 
 from Speedo.exceptions import CancelProcess
 
-from Speedo.config import Config # Main Imports from here
+from Speedo.variables import Config # Main Imports from here
 
 def load_module(shortname):
     if shortname.startswith("__"):
