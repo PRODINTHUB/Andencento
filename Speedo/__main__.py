@@ -59,13 +59,13 @@ for name in files:
 
 print("Sucessfully Started Telethon Version Speedo Fastest bot")
 op = os.environ.get("CLIENT", None)
-
-if len(argv) not in (1, 3, 4):
-    bot.disconnect()
-else:
-    bot.run_until_disconnected()
-
 if op == "Both":
   os.system("python3 -m main_start")
 else:
   pass
+
+bot.loop.run_until_complete(op)
+if len(argv) not in (1, 3, 4):
+    bot.disconnect()
+else:
+    bot.run_until_disconnected()
