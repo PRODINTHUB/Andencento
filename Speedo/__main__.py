@@ -91,26 +91,6 @@ async def speedo_is_on():
     except Exception as e:
         LOGS.info(str(e))
 
-# Join Speedo Channel after deploying 🤐😅
-    try:
-        await bot(JoinChannelRequest("@Its_Speedo"))
-    except BaseException:
-        pass
-
-# Why not come here and chat??
-#    try:
-#        await bot(JoinChannelRequest("@Speedo_Chat"))
-#    except BaseException:
-#        pass
-
-bot.loop.create_task(speedo_is_on())
-async def iampro():
-    op = os.environ.get("CLIENT", None)
-    if op == "Both":
-        await os.system("python3 -m main_start")
-    else:
-        print(" ")
-bot.loop.run_until_complete(iampro)
 
 
 if len(sys.argv) not in (1, 3, 4):
