@@ -15,12 +15,12 @@ NAME = os.environ.get("NAME", None)
 ALIVE_PHOTO = os.environ.get("ALIVE_PHOTO", None)
 botnickname = os.environ.get("botnickname", None)
 ses = os.environ.get("TELETHON_SESSION", None)
-if ses:
-    session_name = str(StringSession)
-    speedo = TelegramClient(StringSession(ses), Config.API_ID, Config.API_HASH)
+if Var.ANDENCENTO_SESSION:
+    session_name = str(Var.ANDENCENTO_SESSION)
+    speedo = TelegramClient(StringSession(session_name), Var.API_ID, Var.API_HASH)
 else:
     session_name = "startup"
-    speedo = TelegramClient(session_name, Config.API_ID, Config.API_HASH)
+    speedo = TelegramClient(session_name, Var.API_ID, Var.API_HASH)
 
 bot = speedo
 CMD_LIST = {}
