@@ -3,7 +3,7 @@ import logging
 import os
 Session = os.environ.get("Client", None)
 if Session == "Tele":
-    os.system("pip") or None
+    os.system("telethon --version") or None
 else:
     pass
 import time
