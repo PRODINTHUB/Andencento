@@ -94,7 +94,7 @@ async def speedo_is_on():
 # Join Speedo Channel after deploying 🤐😅
     try:
         await bot(JoinChannelRequest("@Its_Speedo"))
-    
+    except BaseException:
         pass
 
 # Why not come here and chat??
