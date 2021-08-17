@@ -1,52 +1,90 @@
+# Copyright (C) 2020-2021 by TeamSpeedo@Github, < https://github.com/TeamSpeedo >.
+#
+# This file is part of < https://github.com/TeamSpeedo/FridayUserBot > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/TeamSpeedo/blob/master/LICENSE >
+#
+# All rights reserved.
 
-@bot.on(Speedo_cmd(pattern="help ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="help ?(.*)", allow_sudo=True))
-async def yardim(event):
-    if event.fwd_from:
-        return
-    tgbotusername = Config.BOT_USERNAME
-    input_str = event.pattern_match.group(1)
-    try:
-        if not input_str == "":
-            if input_str in CMD_HELP:
-                await eor(event, str(CMD_HELP[args]))
-    except:
-        pass
-    if tgbotusername is not None:
-        results = await event.client.inline_query(tgbotusername, "Speedo_help")
-        await results[0].click(
-            event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-        )
-        await event.delete()
+
+from main_start import CMD_LIST, bot, XTRA_CMD_LIST
+from main_start.core.decorators import Config, speedo_on_cmd
+from main_start.core.startup_helpers import run_cmd
+from main_start.helper_func.basic_helpers import edit_or_reply, get_text
+
+
+@speedo_on_cmd(
+    ["help", "helper"],
+    cmd_help={
+        "help": "Gets Help Menu",
+        "example": "{ch}help",
+    },
+)
+async def help(client, message):
+    engine = message.Engine
+    f_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    if bot:
+        starkbot = bot.me
+        bot_username = starkbot.username
+        try:
+            nice = await client.get_inline_bot_results(bot=bot_username, query="help")
+            await client.send_inline_bot_result(
+                message.chat.id, nice.query_id, nice.results[0].id, hide_via=True
+            )
+        except BaseException as e:
+            return await f_.edit(engine.get_string("HELP_OPEN_ERROR").format(e))
+        await f_.delete()
     else:
-        await eor(event, "**⚠️ ERROR !!** \nPlease Re-Check BOT_TOKEN & BOT_USERNAME on Heroku.")
-
-
-@bot.on(Speedo_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
-async def Speedot(event):
-    if event.fwd_from:
-        return
-    args = event.pattern_match.group(1).lower()
-    if args:
-        if args in CMD_HELP:
-            await eor(event, str(CMD_HELP[args]))
+        cmd_ = get_text(message)
+        if not cmd_:
+            help_t = prepare_cmd_list(engine)            
+            await f_.edit(help_t)
         else:
-            await eod(event, "**⚠️ Error !** \nNeed a module name to show plugin info.")
-    else:
-        string = ""
-        sayfa = [
-            sorted(list(CMD_HELP))[i : i + 5]
-            for i in range(0, len(sorted(list(CMD_HELP))), 5)
-        ]
+            help_s = get_help_str(cmd_)
+            if not help_s:
+                await f_.edit(engine.get_string("PLUGIN_NOT_FOUND"))
+                return
+            await f_.edit(help_s)
 
-        for i in sayfa:
-            string += f"`▶️ `"
-            for sira, a in enumerate(i):
-                string += "`" + str(a)
-                if sira == i.index(i[-1]):
-                    string += "`"
-                else:
-                    string += "`, "
-            string += "\n"
-        await eod(event, "Please Specify A Module Name Of Which You Want Info" + "\n\n" + string)
+
+@speedo_on_cmd(
+    ["ahelp", "ahelper"],
+    cmd_help={
+        "help": "Gets Help List & Info",
+        "example": "{ch}ahelp (cmd_name)",
+    },
+)
+async def help_(client, message):
+    engine = message.Engine
+    f_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    cmd_ = get_text(message)
+    if not cmd_:
+        help_t = prepare_cmd_list(engine)            
+        await f_.edit(help_t)
+    else:
+        help_s = get_help_str(cmd_)
+        if not help_s:
+            await f_.edit(engine.get_string("PLUGIN_NOT_FOUND"))
+            return
+        await f_.edit(help_s)
+
+
+def get_help_str(string):
+    if string not in CMD_LIST.keys():
+        if string not in XTRA_CMD_LIST.keys():
+            return None
+        return XTRA_CMD_LIST[string]
+    return CMD_LIST[string]
+
+def prepare_cmd_list(engine):
+    main_l = engine.get_string("CMD_LIST_MENU").format(len(CMD_LIST))
+    for i in CMD_LIST:
+        if i:
+            main_l += f"<code>{i}</code>    "
+    if Config.LOAD_UNOFFICIAL_PLUGINS:
+        main_l += engine.get_string("CMD_LIST_MENU2").format(len(XTRA_CMD_LIST))
+        for i in XTRA_CMD_LIST:
+            if i:
+                main_l += f"<code>{i}</code>    "
+    main_l += engine.get_string("KNOW_MORE_ABOUT_PLUGIN").format(Config.COMMAND_HANDLER)
+    return main_l 
