@@ -207,7 +207,7 @@ async def yandex_(client, message):
     ["img", "googleimage", "image", "gi"],
     cmd_help={
         "help": "Search Images In Telegram Itself",
-        "example": "{ch}img fridayuserbot",
+        "example": "{ch}img Andencento",
     },
 )
 async def img_search(client, message):
