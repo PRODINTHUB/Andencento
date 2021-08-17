@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "fridayuserbot"
+          find: "HellBot"
 
-          replace: "Andencento"
+          replace: "Speedo"
 
       - name: Create Pull Request
 
