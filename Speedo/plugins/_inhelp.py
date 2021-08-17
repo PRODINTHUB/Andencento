@@ -94,7 +94,7 @@ def button(page, modules):
 
     modules = CMD_HELP
 if Config.BOT_USERNAME is not None and tgbot is not None:
-    @tgspeedo.on(InlineQuery)  # pylint:disable=E0602
+    @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
@@ -239,7 +239,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
         await event.answer([result] if result else None)
 
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"pmclick")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"pmclick")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
             reply_pop_up_alert = "This is for Other Users..."
@@ -249,7 +249,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 f"🔰 This is SPEEDOBOT PM Security for {speedo_mention} to keep away unwanted retards from spamming PM..."
             )
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"req")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"req")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
             reply_pop_up_alert = "This is for other users!"
@@ -267,7 +267,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             await bot.send_message(LOG_GP, tosend)
 
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"chat")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"chat")))
     async def on_pm_click(event):
         event.query.user_id
         if event.query.user_id == bot.uid:
@@ -286,7 +286,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             await bot.send_message(LOG_GP, tosend)
 
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"heheboi")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"heheboi")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
             reply_pop_up_alert = "This is for other users!"
@@ -308,7 +308,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             )
 
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"unmute")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"unmute")))
     async def on_pm_click(event):
         hunter = (event.data_match.group(1)).decode("UTF-8")
         speedo = hunter.split("+")
@@ -326,7 +326,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
         await event.edit("Yay! You can chat now !!")
 
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"reopen")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"reopen")))
     async def reopn(event):
             if event.query.user_id == bot.uid or event.query.user_id in Config.SUDO_USERS:
                 current_page_number=0
@@ -346,7 +346,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"close")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid or event.query.user_id in Config.SUDO_USERS:
             veriler = custom.Button.inline(f"{speedo_emoji} Re-Open Menu {speedo_emoji}", data="reopen")
@@ -356,7 +356,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
    
 
-    @tgspeedo.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
@@ -378,7 +378,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             )
 
 
-    @tgspeedo.on(
+    @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
     async def Information(event):
@@ -412,7 +412,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             )
 
 
-    @tgspeedo.on(
+    @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"commands\[(.*)\[(\d*)\]\]\((.*)\)"))
     )
     async def commands(event):
