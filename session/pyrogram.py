@@ -3,7 +3,7 @@ import logging
 import os
 Session = os.environ.get("Client", None)
 if Session == "Tele":
-    return
+    return True
 import time
 import motor.motor_asyncio
 from pyrogram import Client
