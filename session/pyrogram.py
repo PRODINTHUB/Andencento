@@ -2,10 +2,6 @@
 import logging
 import os
 Session = os.environ.get("Client", None)
-if Session == "Tele":
-    os.system("telethon --version") or None
-else:
-    pass
 import time
 import motor.motor_asyncio
 from pyrogram import Client
