@@ -18,3 +18,7 @@ else:
   from session.telethon_main import *
   async def impro(): 
    await speedo.start()
+
+
+if __name__ == "__main__":
+  Speedo.loop.run_until_complete(op()) or Speedo.loop.run_until_complete(kk()) or speedo.loop.run_until_complete(impro())
