@@ -1,5 +1,7 @@
-from session.telethon import *
-from session.pyrogram import *
+if Session == "Tele":
+  from session.telethon import *
+else:
+  from session.pyrogram import *
 speedo = speedo
 client = Speedo
 friday_version = "0.1"
