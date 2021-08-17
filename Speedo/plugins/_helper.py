@@ -16,8 +16,8 @@ msg = f"""
 """
 botname = Config.BOT_USERNAME
 
-@bot.on(Speedo_cmd(pattern="repo$"))
-@bot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="repo$"))
+@speedo.on(sudo_cmd(pattern="repo$", allow_sudo=True))
 async def repo(event):
     try:
         speedo = await bot.inline_query(botname, "repo")
@@ -28,8 +28,8 @@ async def repo(event):
         await eor(event, msg)
 
 
-@bot.on(Speedo_cmd(pattern="help ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="help ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="help ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="help ?(.*)", allow_sudo=True))
 async def yardim(event):
     if event.fwd_from:
         return
@@ -51,8 +51,8 @@ async def yardim(event):
         await eor(event, "**⚠️ ERROR !!** \nPlease Re-Check BOT_TOKEN & BOT_USERNAME on Heroku.")
 
 
-@bot.on(Speedo_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
 async def Speedot(event):
     if event.fwd_from:
         return

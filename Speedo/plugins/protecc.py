@@ -19,8 +19,8 @@ def progress(current, total):
         )
     )
 
-@bot.on(Speedo_cmd(pattern="pt ?(.*)"))
-@bot.on(sudo_cmd(pattern="pt ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="pt ?(.*)"))
+@speedo.on(sudo_cmd(pattern="pt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -68,7 +68,7 @@ async def _(event):
     await speedo.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
-@bot.on(events.NewMessage(incoming=True))
+@speedo.on(events.NewMessage(incoming=True))
 async def _(event):
     if not event.media:
         return
@@ -115,8 +115,8 @@ async def _(event):
             pass
  
 
-@bot.on(Speedo_cmd(pattern="adwaifu ?(.*)"))
-@bot.on(sudo_cmd(pattern="adwaifu ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="adwaifu ?(.*)"))
+@speedo.on(sudo_cmd(pattern="adwaifu ?(.*)", allow_sudo=True))
 async def _(event):
     if not event.is_group:
         await eod(event, "Autowaifu works in Groups Only !!")
@@ -128,8 +128,8 @@ async def _(event):
     await eod(event, f"**Added Chat** {event.chat.title} **With Id** `{event.chat_id}` **To Autowaifu Database.**")
 
 
-@bot.on(Speedo_cmd(pattern="rmwaifu ?(.*)"))
-@bot.on(sudo_cmd(pattern="rmwaifu ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="rmwaifu ?(.*)"))
+@speedo.on(sudo_cmd(pattern="rmwaifu ?(.*)", allow_sudo=True))
 async def _(event):
     if not event.is_group:
         await eod(event, "Autowaifu works in groups only !!")

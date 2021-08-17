@@ -4,8 +4,8 @@ import traceback
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="calc (.*)"))
-@bot.on(sudo_cmd(pattern="calc (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="calc (.*)"))
+@speedo.on(sudo_cmd(pattern="calc (.*)", allow_sudo=True))
 async def _(car):
     if car.fwd_from:
         return

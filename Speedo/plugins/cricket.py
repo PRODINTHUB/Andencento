@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="cs$"))
-@bot.on(sudo_cmd(pattern="cs$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="cs$"))
+@speedo.on(sudo_cmd(pattern="cs$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

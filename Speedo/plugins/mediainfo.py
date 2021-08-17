@@ -3,8 +3,8 @@ import os
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="mediainfo$"))
-@bot.on(sudo_cmd(pattern="mediainfo$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="mediainfo$"))
+@speedo.on(sudo_cmd(pattern="mediainfo$", allow_sudo=True))
 async def mediainfo(event):
     SPEEDO_MEDIA = None
     reply = await event.get_reply_message()

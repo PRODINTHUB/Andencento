@@ -8,8 +8,8 @@ from . import *
 
 FILLERS = {}
 
-@bot.on(Speedo_cmd(pattern="anilist (.*)"))
-@bot.on(sudo_cmd(pattern="anilist (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="anilist (.*)"))
+@speedo.on(sudo_cmd(pattern="anilist (.*)", allow_sudo=True))
 async def anilist(event):
     if event.fwd_from:
         return
@@ -25,8 +25,8 @@ async def anilist(event):
         await event.edit(msg, link_preview=True)
 
 
-@bot.on(Speedo_cmd(pattern="anime(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="anime(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
 async def nope(hel_):
     speedo = hel_.pattern_match.group(1)
     if not speedo:
@@ -51,8 +51,8 @@ async def nope(hel_):
     	await eod(hel_, "**Error 404:**  Not Found")
     
     
-@bot.on(Speedo_cmd(pattern="manga(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="manga(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="manga(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="manga(?: |$)(.*)", allow_sudo=True))
 async def nope(hel_):
     speedo = hel_.pattern_match.group(1)
     if not speedo:
@@ -77,8 +77,8 @@ async def nope(hel_):
     
     
 
-@bot.on(Speedo_cmd(pattern="character(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="character(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="character(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="character(?: |$)(.*)", allow_sudo=True))
 async def nope(hel_):
     speedo = hel_.pattern_match.group(1)
     if not speedo:
@@ -103,8 +103,8 @@ async def nope(hel_):
     
 
 
-@bot.on(Speedo_cmd(pattern="fillers ?(.*)"))
-@bot.on(sudo_cmd(pattern="fillers ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="fillers ?(.*)"))
+@speedo.on(sudo_cmd(pattern="fillers ?(.*)", allow_sudo=True))
 async def canon(event):
     speedo = event.text[9:]
     if speedo == "":
@@ -147,8 +147,8 @@ async def canon(event):
     await nub.edit(Speedo)
 
 
-@bot.on(Speedo_cmd(pattern="aniquote$"))
-@bot.on(sudo_cmd(pattern="aniquote$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="aniquote$"))
+@speedo.on(sudo_cmd(pattern="aniquote$", allow_sudo=True))
 async def quote(event):
     speedo = await eor(event, "(ﾉ◕ヮ◕)ﾉ*.✧")
     q = requests.get("https://animechan.vercel.app/api/random").json()

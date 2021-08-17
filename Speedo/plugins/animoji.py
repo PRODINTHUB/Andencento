@@ -4,8 +4,8 @@ from collections import deque
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="think$", outgoing=True))
-@bot.on(sudo_cmd(pattern="think$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="think$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="think$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -16,16 +16,16 @@ async def _(event):
         await event.edit("".join(deq))
         deq.rotate(1)
 
-@bot.on(Speedo_cmd(pattern="ccry$", outgoing=True))
-@bot.on(sudo_cmd(pattern="ccry$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="ccry$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="ccry$", allow_sudo=True))
 async def cry(e):
     if e.fwd_from:
         return
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("(;´༎ຶД༎ຶ)")
 
-@bot.on(Speedo_cmd(pattern="fap$", outgoing=True))
-@bot.on(sudo_cmd(pattern="fap$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="fap$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="fap$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -36,8 +36,8 @@ async def _(event):
         await event.edit("".join(deq))
         deq.rotate(1)
 
-@bot.on(Speedo_cmd(pattern=r"lmao$"))
-@bot.on(sudo_cmd(pattern=r"lmao$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"lmao$"))
+@speedo.on(sudo_cmd(pattern=r"lmao$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -49,8 +49,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(pattern=r"nothappy$"))
-@bot.on(sudo_cmd(pattern="nothappy$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"nothappy$"))
+@speedo.on(sudo_cmd(pattern="nothappy$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,8 +62,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(outgoing=True, pattern="clock$"))
-@bot.on(sudo_cmd(pattern="clock$", allow_sudo=True))
+@speedo.on(Speedo_cmd(outgoing=True, pattern="clock$"))
+@speedo.on(sudo_cmd(pattern="clock$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -75,8 +75,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(pattern=r"muah$"))
-@bot.on(sudo_cmd(pattern="muah$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"muah$"))
+@speedo.on(sudo_cmd(pattern="muah$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -88,8 +88,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(pattern="heart$"))
-@bot.on(sudo_cmd(pattern="heart$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="heart$"))
+@speedo.on(sudo_cmd(pattern="heart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -101,8 +101,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(pattern="gym$", outgoing=True))
-@bot.on(sudo_cmd(pattern="gym$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="gym$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="gym$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -114,8 +114,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(pattern=f"earth$", outgoing=True))
-@bot.on(sudo_cmd(pattern="earth$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"earth$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="earth$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -127,8 +127,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(Speedo_cmd(outgoing=True, pattern="moon$"))
-@bot.on(sudo_cmd(pattern="moon$", allow_sudo=True))
+@speedo.on(Speedo_cmd(outgoing=True, pattern="moon$"))
+@speedo.on(sudo_cmd(pattern="moon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -139,8 +139,8 @@ async def _(event):
         await event.edit("".join(deq))
         deq.rotate(1)
 
-@bot.on(Speedo_cmd(pattern=f"lovestory$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"lovestory$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"lovestory$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"lovestory$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -167,8 +167,8 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 103])
 
-@bot.on(Speedo_cmd(pattern=f"smoon$", outgoing=True))
-@bot.on(sudo_cmd(pattern="smoon$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"smoon$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="smoon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -191,8 +191,8 @@ async def _(event):
         await event.edit(animation_chars[i % 8])
 
 
-@bot.on(Speedo_cmd(pattern=f"tmoon$", outgoing=True))
-@bot.on(sudo_cmd(pattern="tmoon$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"tmoon$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="tmoon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -239,8 +239,8 @@ async def _(event):
         await event.edit(animation_chars[i % 32])
 
 
-@bot.on(Speedo_cmd(pattern=f"hart$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"hart$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"hart$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"hart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -253,8 +253,8 @@ async def _(event):
         await event.edit(animation_chars[i % 4])
 
 
-@bot.on(Speedo_cmd(pattern=f"anim$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"anim$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"anim$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"anim$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -276,8 +276,8 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@bot.on(Speedo_cmd(pattern=f"fuck$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"fuck$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"fuck$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"fuck$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -290,8 +290,8 @@ async def _(event):
         await event.edit(animation_chars[i % 4])
 
 
-@bot.on(Speedo_cmd(pattern=f"sux$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"sux$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"sux$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"sux$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -304,8 +304,8 @@ async def _(event):
         await event.edit(animation_chars[i % 4])
 
 
-@bot.on(Speedo_cmd(pattern=f"kiss$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"kiss$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"kiss$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"kiss$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -317,8 +317,8 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 4])
 
-@bot.on(Speedo_cmd(pattern=f"fnl$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"fnl$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"fnl$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"fnl$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -331,8 +331,8 @@ async def _(event):
         await event.edit(animation_chars[i % 6])
 
 
-@bot.on(Speedo_cmd(pattern=f"monkey$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"monkey$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"monkey$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"monkey$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -345,8 +345,8 @@ async def _(event):
         await event.edit(animation_chars[i % 6])
 
 
-@bot.on(Speedo_cmd(pattern=f"hand$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"hand$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"hand$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"hand$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -373,8 +373,8 @@ async def _(event):
         await event.edit(animation_chars[i % 13])
 
 
-@bot.on(Speedo_cmd(pattern=f"gsg$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"gsg$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"gsg$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"gsg$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -400,8 +400,8 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@bot.on(Speedo_cmd(pattern=r"theart$", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"theart$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"theart$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=r"theart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

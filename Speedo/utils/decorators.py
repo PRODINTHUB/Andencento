@@ -152,7 +152,7 @@ def sudo_cmd(pattern=None, command=None, **args):
     return events.NewMessage(**args)
 
 
-on = bot.on
+on = speedo.on
 
 
 def on(**args):

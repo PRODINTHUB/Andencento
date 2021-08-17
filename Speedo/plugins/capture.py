@@ -6,8 +6,8 @@ from selenium import webdriver
 
 from . import *
 
-@bot.on(Speedo_cmd(pattern="(webshot|screenshot) (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="(webshot|screenshot) (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="(webshot|screenshot) (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="(webshot|screenshot) (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

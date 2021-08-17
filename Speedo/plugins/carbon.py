@@ -12,8 +12,8 @@ CARBONLANG = "auto"
 LANG = "en"
 
 
-@bot.on(Speedo_cmd(outgoing=True, pattern="carbon(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="carbon(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(outgoing=True, pattern="carbon(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="carbon(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -76,8 +76,8 @@ async def carbon_api(e):
     await speedo.delete()
 
 
-@bot.on(Speedo_cmd(outgoing=True, pattern="krb"))
-@bot.on(sudo_cmd(pattern="krb", allow_sudo=True))
+@speedo.on(Speedo_cmd(outgoing=True, pattern="krb"))
+@speedo.on(sudo_cmd(pattern="krb", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -160,8 +160,8 @@ async def carbon_api(e):
     await speedo.delete()
 
 
-@bot.on(Speedo_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="kar1(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="kar1(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -221,8 +221,8 @@ async def carbon_api(e):
     await speedo.delete()  # Deleting msg
 
 
-@bot.on(Speedo_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="kar2(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="kar2(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -282,8 +282,8 @@ async def carbon_api(e):
     await speedo.delete()  # Deleting msg
 
 
-@bot.on(Speedo_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="kar3(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="kar3(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -347,8 +347,8 @@ async def carbon_api(e):
     await speedo.delete()  # Deleting msg
 
 
-@bot.on(Speedo_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="kar4(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="kar4(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -412,8 +412,8 @@ async def carbon_api(e):
     await speedo.delete()  # Deleting msg
 
 
-@bot.on(Speedo_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="rgbk2(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="rgbk2(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return
@@ -481,8 +481,8 @@ async def carbon_api(e):
     await speedo.delete()  # Deleting msg
 
 
-@bot.on(Speedo_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="kargb(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="kargb(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     if e.fwd_from:
         return

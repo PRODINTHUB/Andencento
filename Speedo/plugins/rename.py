@@ -36,8 +36,8 @@ def get_video_thumb(file, output=None, width=90):
         return output
 
 
-@bot.on(Speedo_cmd(pattern="rename (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="rename (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="rename (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="rename (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -68,8 +68,8 @@ async def _(event):
         await eod(speedo, f"Syntax `{hl}rename file.name` as reply to a Telegram media")
 
 
-@bot.on(Speedo_cmd(pattern="rnupload (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="rnupload (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="rnupload (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="rnupload (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -117,8 +117,8 @@ async def _(event):
         await speedo.edit("Syntax // `{}rnupload file.name` as reply to a Telegram media".format(hl))
 
 
-@bot.on(Speedo_cmd(pattern="rnsupload (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="rnsupload (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="rnsupload (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="rnsupload (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

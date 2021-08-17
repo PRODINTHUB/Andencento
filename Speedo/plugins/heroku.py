@@ -35,8 +35,8 @@ async def restart(event):
         execl(executable, executable, "bash", "Speedo")
 
 
-@bot.on(Speedo_cmd(pattern="restart$"))
-@bot.on(sudo_cmd(pattern="restart$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="restart$"))
+@speedo.on(sudo_cmd(pattern="restart$", allow_sudo=True))
 async def re(speedo):
     if speedo.fwd_from:
         return
@@ -47,8 +47,8 @@ async def re(speedo):
         await event.edit("Please Set Your `HEROKU_API_KEY` to restart SPEEDOBOT")
 
 
-@bot.on(Speedo_cmd(pattern="shutdown$"))
-@bot.on(sudo_cmd(pattern="shutdown$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="shutdown$"))
+@speedo.on(sudo_cmd(pattern="shutdown$", allow_sudo=True))
 async def down(speedo):
     if speedo.fwd_from:
         return
@@ -61,8 +61,8 @@ async def down(speedo):
         sys.exit(0)
 
 
-@bot.on(Speedo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", allow_sudo=True))
 async def variable(speedo):
     if speedo.fwd_from:
         return
@@ -155,8 +155,8 @@ async def variable(speedo):
             return await event.edit(f"`{variable}`  **does not exists**")
 
 
-@bot.on(Speedo_cmd(pattern="usage(?: |$)", outgoing=True))
-@bot.on(sudo_cmd(pattern="usage(?: |$)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="usage(?: |$)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="usage(?: |$)", allow_sudo=True))
 async def dyno_usage(speedo):
     if speedo.fwd_from:
         return
@@ -217,8 +217,8 @@ async def dyno_usage(speedo):
     )
 
 
-@bot.on(Speedo_cmd(pattern="logs$"))
-@bot.on(sudo_cmd(pattern="logs$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="logs$"))
+@speedo.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(dyno):
     if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
         return await eor(dyno, f"Make Sure Your HEROKU_APP_NAME & HEROKU_API_KEY are filled correct. Visit {speedo_grp} for help.", link_preview=False)

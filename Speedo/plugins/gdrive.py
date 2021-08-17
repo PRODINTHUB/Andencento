@@ -73,8 +73,8 @@ async def get_file_name(content):
     return file_name
 
 
-@bot.on(Speedo_cmd(pattern=r"gdl"))
-@bot.on(sudo_cmd(pattern=r"gdl", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"gdl"))
+@speedo.on(sudo_cmd(pattern=r"gdl", allow_sudo=True))
 async def g_download(event):
     if event.fwd_from:
         return

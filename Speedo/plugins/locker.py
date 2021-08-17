@@ -4,8 +4,8 @@ from telethon.tl.types import ChatBannedRights
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern=r"lock ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"lock ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"lock ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern=r"lock ?(.*)", allow_sudo=True))
 @errors_handler
 async def locks(event):
     input_str = event.pattern_match.group(1).lower()
@@ -98,8 +98,8 @@ async def locks(event):
         return
 
 
-@bot.on(Speedo_cmd(pattern="unlock ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="unlock ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="unlock ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="unlock ?(.*)", allow_sudo=True))
 @errors_handler
 async def rem_locks(event):
     input_str = event.pattern_match.group(1).lower()
@@ -196,8 +196,8 @@ async def rem_locks(event):
         await eod(event, f"`Do I have proper rights for that ??`\n**Error:** {str(e)}")
         return
 
-@bot.on(Speedo_cmd(pattern="ltype$"))
-@bot.on(sudo_cmd(pattern="ltype$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="ltype$"))
+@speedo.on(sudo_cmd(pattern="ltype$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

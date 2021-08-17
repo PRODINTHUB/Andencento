@@ -3,8 +3,8 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from . import *
 
-@bot.on(Speedo_cmd(pattern="history ?(.*)"))
-@bot.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="history ?(.*)"))
+@speedo.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
 async def _(speedoevent):
     if speedoevent.fwd_from:
         return 
@@ -37,8 +37,8 @@ async def _(speedoevent):
              await speedoevent.client.send_message(speedoevent.chat_id, response2.message)
 
 
-@bot.on(Speedo_cmd(pattern="unh ?(.*)"))
-@bot.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="unh ?(.*)"))
+@speedo.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
 async def _(speedoevent):
     if speedoevent.fwd_from:
         return 

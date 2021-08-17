@@ -9,8 +9,8 @@ from Speedo.sql.echo_sql import addecho, get_all_echos, is_echo, remove_echo
 from . import *
 
 
-@bot.on(admin_cmd(pattern="echo$"))
-@bot.on(sudo_cmd(pattern="echo$", allow_sudo=True))
+@speedo.on(admin_cmd(pattern="echo$"))
+@speedo.on(sudo_cmd(pattern="echo$", allow_sudo=True))
 async def echo(speedo):
     if speedo.fwd_from:
         return
@@ -33,8 +33,8 @@ async def echo(speedo):
         await delete_speedo(speedo, "Reply to a User's message to echo his messages")
 
 
-@bot.on(admin_cmd(pattern="rmecho$"))
-@bot.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
+@speedo.on(admin_cmd(pattern="rmecho$"))
+@speedo.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
 async def echo(speedo):
     if speedo.fwd_from:
         return
@@ -57,8 +57,8 @@ async def echo(speedo):
         await eod(speedo, "Reply to a User's message to echo his messages")
 
 
-@bot.on(admin_cmd(pattern="listecho$"))
-@bot.on(sudo_cmd(pattern="listecho$", allow_sudo=True))
+@speedo.on(admin_cmd(pattern="listecho$"))
+@speedo.on(sudo_cmd(pattern="listecho$", allow_sudo=True))
 async def echo(speedo):
     if speedo.fwd_from:
         return
@@ -87,7 +87,7 @@ async def echo(speedo):
         await eor(speedo, output_str)
 
 
-@bot.on(events.NewMessage(incoming=True))
+@speedo.on(events.NewMessage(incoming=True))
 async def samereply(speedo):
     if speedo.chat_id in Config.BL_CHAT:
         return

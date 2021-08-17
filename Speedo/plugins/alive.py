@@ -19,8 +19,8 @@ alive_c += f"•♦• Channel      :  {speedo_channel}\n"
 
 #-------------------------------------------------------------------------------
 
-@bot.on(Speedo_cmd(outgoing=True, pattern="alive$"))
-@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+@speedo.on(Speedo_cmd(outgoing=True, pattern="alive$"))
+@speedo.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def up(speedo):
     if speedo.fwd_from:
         return
@@ -40,8 +40,8 @@ msg = f"""
 """
 botname = Config.BOT_USERNAME
 
-@bot.on(Speedo_cmd(pattern="speedo$"))
-@bot.on(sudo_cmd(pattern="speedo$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="speedo$"))
+@speedo.on(sudo_cmd(pattern="speedo$", allow_sudo=True))
 async def speedo_a(event):
     try:
         speedo = await bot.inline_query(botname, "alive")

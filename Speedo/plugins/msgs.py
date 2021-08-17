@@ -21,8 +21,8 @@ async def all_groups_id(speedo):
     return speedogroups
 
 
-@bot.on(Speedo_cmd(pattern="frwd$"))
-@bot.on(sudo_cmd(pattern="frwd$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="frwd$"))
+@speedo.on(sudo_cmd(pattern="frwd$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -45,8 +45,8 @@ async def _(event):
         await event.delete()
 
 
-@bot.on(Speedo_cmd(pattern="resend$"))
-@bot.on(sudo_cmd(pattern="resend$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="resend$"))
+@speedo.on(sudo_cmd(pattern="resend$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -60,8 +60,8 @@ async def _(event):
     await event.respond(m)
 
 
-@bot.on(Speedo_cmd(pattern=r"fpost (.*)"))
-@bot.on(sudo_cmd(pattern=r"fpost (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"fpost (.*)"))
+@speedo.on(sudo_cmd(pattern=r"fpost (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

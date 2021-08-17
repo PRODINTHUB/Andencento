@@ -2,8 +2,8 @@ import pyfiglet
 
 from . import *
 
-@bot.on(Speedo_cmd(pattern="figlet ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="figlet ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
 async def figlet(event):
     if event.fwd_from:
         return

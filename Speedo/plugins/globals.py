@@ -53,8 +53,8 @@ async def get_user_from_id(user, event):
 
 
 
-@bot.on(Speedo_cmd(pattern="gpro ?(.*)"))
-@bot.on(sudo_cmd(pattern="gpro ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="gpro ?(.*)"))
+@speedo.on(sudo_cmd(pattern="gpro ?(.*)", allow_sudo=True))
 async def _(speedoevent):
     i = 0
     sender = await speedoevent.get_sender()
@@ -106,8 +106,8 @@ async def _(speedoevent):
     await bot.send_message(Config.LOGGER_ID, f"#GPROMOTE \n\n**Globally Promoted User :** [{user.first_name}](tg://user?id={user.id}) \n\n**Total Chats :** `{i}`")
 
 
-@bot.on(Speedo_cmd(pattern="gdem ?(.*)"))
-@bot.on(sudo_cmd(pattern="gdem ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="gdem ?(.*)"))
+@speedo.on(sudo_cmd(pattern="gdem ?(.*)", allow_sudo=True))
 async def _(speedoevent):
     i = 0
     sender = await speedoevent.get_sender()
@@ -159,8 +159,8 @@ async def _(speedoevent):
     await bot.send_message(Config.LOGGER_ID, f"#GDEMOTE \n\n**Globally Demoted :** [{user.first_name}](tg://user?id={user.id}) \n\n**Total Chats :** `{i}`")
 
 
-@bot.on(Speedo_cmd(pattern=r"gban ?(.*)"))
-@bot.on(sudo_cmd(pattern=r"gban ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"gban ?(.*)"))
+@speedo.on(sudo_cmd(pattern=r"gban ?(.*)", allow_sudo=True))
 async def _(event):
     speedo = await eor(event, "`Gbanning...`")
     reason = ""
@@ -217,8 +217,8 @@ async def _(event):
         await speedo.edit(ogmsg)
 
 
-@bot.on(Speedo_cmd(pattern=r"ungban ?(.*)"))
-@bot.on(sudo_cmd(pattern=r"ungban ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"ungban ?(.*)"))
+@speedo.on(sudo_cmd(pattern=r"ungban ?(.*)", allow_sudo=True))
 async def _(event):
     speedo = await eor(event, "`Ungban in progress...`")
     if event.reply_to_msg_id:
@@ -246,8 +246,8 @@ async def _(event):
     )
 
 
-@bot.on(Speedo_cmd(pattern="listgban$"))
-@bot.on(sudo_cmd(pattern="listgban$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="listgban$"))
+@speedo.on(sudo_cmd(pattern="listgban$", allow_sudo=True))
 async def already(event):
     gbanned_users = all_gbanned()
     GBANNED_LIST = "**Gbanned Users :**\n"
@@ -260,7 +260,7 @@ async def already(event):
     await edit_or_reply(event, GBANNED_LIST)
 
 
-@bot.on(events.ChatAction)
+@speedo.on(events.ChatAction)
 async def _(event):
     if event.user_joined or event.added_by:
         user = await event.get_user()
@@ -280,8 +280,8 @@ async def _(event):
                     pass
 
 
-@bot.on(Speedo_cmd(pattern=r"gkick ?(.*)"))
-@bot.on(sudo_cmd(pattern=r"gkick ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"gkick ?(.*)"))
+@speedo.on(sudo_cmd(pattern=r"gkick ?(.*)", allow_sudo=True))
 async def gkick(event):
     speedo = await eor(event, "`Kicking globally...`")
     if event.reply_to_msg_id:
@@ -313,8 +313,8 @@ async def gkick(event):
         await speedo.edit(gkmsg)
 
 
-@bot.on(Speedo_cmd(pattern=r"gmute ?(\d+)?"))
-@bot.on(sudo_cmd(allow_sudo=True, pattern=r"gmute ?(\d+)?"))
+@speedo.on(Speedo_cmd(pattern=r"gmute ?(\d+)?"))
+@speedo.on(sudo_cmd(allow_sudo=True, pattern=r"gmute ?(\d+)?"))
 async def gm(event):
     private = False
     if event.fwd_from:
@@ -354,8 +354,8 @@ async def gm(event):
         
 
 
-@bot.on(Speedo_cmd(outgoing=True, pattern=r"ungmute ?(\d+)?"))
-@bot.on(sudo_cmd(allow_sudo=True, pattern=r"ungmute ?(\d+)?"))
+@speedo.on(Speedo_cmd(outgoing=True, pattern=r"ungmute ?(\d+)?"))
+@speedo.on(sudo_cmd(allow_sudo=True, pattern=r"ungmute ?(\d+)?"))
 async def endgmute(event):
     private = False
     if event.fwd_from:

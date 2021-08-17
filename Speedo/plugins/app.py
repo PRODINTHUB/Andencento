@@ -3,8 +3,8 @@ import requests
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="app (.*)"))
-@bot.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="app (.*)"))
+@speedo.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     if event.fwd_from:
         return
@@ -75,8 +75,8 @@ async def apk(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-@bot.on(Speedo_cmd(pattern="appr (.*)"))
-@bot.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="appr (.*)"))
+@speedo.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
 async def apkr(event):
     if event.fwd_from:
         return
@@ -148,8 +148,8 @@ async def apkr(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-@bot.on(Speedo_cmd(pattern="mods ?(.*)"))
-@bot.on(sudo_cmd(pattern="mods ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="mods ?(.*)"))
+@speedo.on(sudo_cmd(pattern="mods ?(.*)", allow_sudo=True))
 async def mod(event):
     if event.fwd_from:
         return

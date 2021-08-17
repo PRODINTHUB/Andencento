@@ -21,7 +21,7 @@ SPEEDO_FIRST = (
     "{}\n\n**Please Choose Why You Are Here!!**".format(speedo_mention, CSTM_PMP)
 )
 
-@bot.on(Speedo_cmd(pattern="block$"))
+@speedo.on(Speedo_cmd(pattern="block$"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -54,7 +54,7 @@ async def approve_p_m(event):
         
         
 if PM_ON_OFF != "DISABLE":
-    @bot.on(events.NewMessage(outgoing=True))
+    @speedo.on(events.NewMessage(outgoing=True))
     async def auto_approve_for_out_going(event):
         if event.fwd_from:
             return
@@ -77,7 +77,7 @@ if PM_ON_OFF != "DISABLE":
             if not event.chat_id in PM_WARNS:
                 pm_sql.approve(event.chat_id, "outgoing")
                 
-    @bot.on(Speedo_cmd(pattern="(a|approve|allow)$"))
+    @speedo.on(Speedo_cmd(pattern="(a|approve|allow)$"))
     async def approve(event):
         if event.fwd_from:
             return
@@ -118,7 +118,7 @@ if PM_ON_OFF != "DISABLE":
                 await event.edit('User Already Approved !')
                 await event.delete()
 
-    @bot.on(Speedo_cmd(pattern="(da|disapprove|disallow)$"))
+    @speedo.on(Speedo_cmd(pattern="(da|disapprove|disallow)$"))
     async def dapprove(event):
         if event.fwd_from:
             return
@@ -161,7 +161,7 @@ if PM_ON_OFF != "DISABLE":
                 await event.delete()    
                 
                 
-    @bot.on(Speedo_cmd(pattern="listapproved$"))
+    @speedo.on(Speedo_cmd(pattern="listapproved$"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -192,7 +192,7 @@ if PM_ON_OFF != "DISABLE":
         else:
             await event.edit(APPROVED_PMs)
 
-    @bot.on(events.NewMessage(incoming=True))
+    @speedo.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         if not event.is_private:
             return
@@ -256,7 +256,7 @@ if PM_ON_OFF != "DISABLE":
 
 NEEDIT = Config.INSTANT_BLOCK
 if NEEDIT == "ENABLE":
-    @bot.on(events.NewMessage(incoming=True))
+    @speedo.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media

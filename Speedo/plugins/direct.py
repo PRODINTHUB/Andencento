@@ -11,8 +11,8 @@ from humanize import naturalsize
 from . import *
 
 
-@bot.on(Speedo_cmd(outgoing=True, pattern=r"direct(?: |$)([\s\S]*)"))
-@bot.on(sudo_cmd(allow_sudo=True, pattern=r"direct(?: |$)([\s\S]*)"))
+@speedo.on(Speedo_cmd(outgoing=True, pattern=r"direct(?: |$)([\s\S]*)"))
+@speedo.on(sudo_cmd(allow_sudo=True, pattern=r"direct(?: |$)([\s\S]*)"))
 async def direct_link_generator(request):
     if request.fwd_from:
         return

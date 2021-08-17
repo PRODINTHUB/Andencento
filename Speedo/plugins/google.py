@@ -21,8 +21,8 @@ def progress(current, total):
     )
 
 
-@bot.on(Speedo_cmd(pattern="wikipedia (.*)"))
-@bot.on(sudo_cmd(pattern="wikipedia (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="wikipedia (.*)"))
+@speedo.on(sudo_cmd(pattern="wikipedia (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -38,8 +38,8 @@ async def _(event):
     )
 
 
-@bot.on(Speedo_cmd(pattern="watch (.*)"))
-@bot.on(sudo_cmd(pattern="watch (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="watch (.*)"))
+@speedo.on(sudo_cmd(pattern="watch (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -88,8 +88,8 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(Speedo_cmd(pattern="google (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="google (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="google (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="google (.*)", allow_sudo=True))
 async def google(event):
     input_str = event.pattern_match.group(1)
     if not input_str:
@@ -116,8 +116,8 @@ async def google(event):
     see.clear()
 
 
-@bot.on(Speedo_cmd(pattern="img (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="img (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="img (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="img (.*)", allow_sudo=True))
 async def img(event):
     sim = event.pattern_match.group(1)
     if not sim:
@@ -145,8 +145,8 @@ async def img(event):
     await speedo.delete()
 
 
-@bot.on(Speedo_cmd(pattern="reverse"))
-@bot.on(sudo_cmd(pattern="reverse", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="reverse"))
+@speedo.on(sudo_cmd(pattern="reverse", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -205,8 +205,8 @@ More Info: Open this <a href="{the_location}">Link</a> in {ms} seconds""".format
     await speedo.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
-@bot.on(Speedo_cmd(pattern="gps ?(.*)"))
-@bot.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="gps ?(.*)"))
+@speedo.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
     if event.fwd_from:
         return

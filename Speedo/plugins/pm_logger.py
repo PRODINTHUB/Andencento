@@ -17,7 +17,7 @@ NO_PM_LOG_USERS = []
 lg_id = Config.PM_LOG_ID
 
 
-@bot.on(Speedo_cmd(pattern=r"save(?: |$)([\s\S]*)", outgoing=True))
+@speedo.on(Speedo_cmd(pattern=r"save(?: |$)([\s\S]*)", outgoing=True))
 async def log(log_text):
     if lg_id is not None:
         if log_text.reply_to_msg_id:
@@ -35,7 +35,7 @@ async def log(log_text):
         await eod(log_text, "`This feature requires Logging to be enabled!`")
 
 
-@bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@speedo.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     if lg_id is None:
         return
@@ -54,7 +54,7 @@ async def monito_p_m_s(event):
                 print(e)
 
 
-@bot.on(Speedo_cmd(pattern="elog ?(.*)"))
+@speedo.on(Speedo_cmd(pattern="elog ?(.*)"))
 async def set_no_log_p_m(event):
     if Config.PM_LOG_ID is not None:
         event.pattern_match.group(1)
@@ -67,7 +67,7 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@bot.on(Speedo_cmd(pattern="nlog ?(.*)"))
+@speedo.on(Speedo_cmd(pattern="nlog ?(.*)"))
 async def set_no_log_p_m(event):
     if Config.PM_LOG_ID is not None:
         event.pattern_match.group(1)

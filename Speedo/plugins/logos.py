@@ -10,8 +10,8 @@ from . import *
 
 PICS_STR = []
 
-@bot.on(Speedo_cmd(pattern=r"logo ?(.*)"))
-@bot.on(sudo_cmd(pattern=r"logo ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"logo ?(.*)"))
+@speedo.on(sudo_cmd(pattern=r"logo ?(.*)", allow_sudo=True))
 async def lg1(speedoevent):
     event = await eor(speedoevent, "`Processing.....`")
     fnt = await get_font_file(speedoevent.client, "@SPEEDO_FRONTS")

@@ -5,8 +5,8 @@ import base64
 
 from . import *
 
-@bot.on(Speedo_cmd(pattern="hash (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="hash (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="hash (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="hash (.*)", allow_sudo=True))
 @errors_handler
 async def gethash(hash_q):
     if hash_q.fwd_from:
@@ -54,8 +54,8 @@ async def gethash(hash_q):
         await event.delete()
 
 
-@bot.on(Speedo_cmd(pattern="b64 (en|de) (.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="b64 (en|de) (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="b64 (en|de) (.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="b64 (en|de) (.*)", allow_sudo=True))
 @errors_handler
 async def endecrypt(query):
     if query.fwd_from:

@@ -9,8 +9,8 @@ from . import *
 
 lg_id = Config.LOGGER_ID
 
-@bot.on(Speedo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
-@bot.on(sudo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
+@speedo.on(sudo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,8 +37,8 @@ async def _(event):
 
 
 
-@bot.on(Speedo_cmd(pattern="eval(?: |$|\n)(.*)", command="eval"))
-@bot.on(sudo_cmd(pattern="eval(?: |$|\n)(.*)", command="eval", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="eval(?: |$|\n)(.*)", command="eval"))
+@speedo.on(sudo_cmd(pattern="eval(?: |$|\n)(.*)", command="eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -88,8 +88,8 @@ async def aexec(code, smessatatus):
     )
 
 
-@bot.on(Speedo_cmd(pattern="bash ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="bash ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

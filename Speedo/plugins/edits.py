@@ -11,8 +11,8 @@ from telethon.tl.types import MessageEntityMentionName
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="type (.*)"))
-@bot.on(sudo_cmd(pattern="type (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="type (.*)"))
+@speedo.on(sudo_cmd(pattern="type (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -44,8 +44,8 @@ async def _(event):
         await asyncio.sleep(DELAY_BETWEEN_EDITS)
 
 
-@bot.on(Speedo_cmd(pattern="emoji (.*)"))
-@bot.on(sudo_cmd(pattern="emoji (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="emoji (.*)"))
+@speedo.on(sudo_cmd(pattern="emoji (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -70,80 +70,80 @@ async def _(event):
             await event.edit(animation_chars[i % 2])
 
 
-@bot.on(Speedo_cmd(pattern=f"gendar$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"gendar$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"gendar$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"gendar$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(GENDER)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"shrug$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"shrug$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"shrug$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"shrug$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(SHRUG)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"doge", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"doge", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"doge", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"doge", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(DOG)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"mesed$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"mesed$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"mesed$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"mesed$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(SED)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"medead$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"medead$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"medead$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"medead$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(DEAD)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"confused$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"confused$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"confused$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"confused$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(CONFUSED)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"lobb$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"lobb$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"lobb$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"lobb$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(LOB)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"wut$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"wut$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"wut$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"wut$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(WTF)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"wavee$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"wavee$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"wavee$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"wavee$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return
     txt = random.choice(WAVING)
     await edit_or_reply(e, txt)
     
-@bot.on(Speedo_cmd(pattern=f"hehe$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"hehe$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"hehe$", outgoing=True))
+@speedo.on(sudo_cmd(pattern=f"hehe$", allow_sudo=True))
 async def metoo(e):
     if e.fwd_from:
         return

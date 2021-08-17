@@ -3,8 +3,8 @@ from telethon import events
 from Speedo.sql.autopost_sql import add_post, get_all_post, is_post, remove_post
 from . import *
 
-@bot.on(Speedo_cmd(pattern="autopost ?(.*)"))
-@bot.on(sudo_cmd(pattern="autopost ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="autopost ?(.*)"))
+@speedo.on(sudo_cmd(pattern="autopost ?(.*)", allow_sudo=True))
 async def _(event):
     if (event.is_private or event.is_group):
         return await eod(event, "AutoPost Can Only Be Used For Channels.")
@@ -21,8 +21,8 @@ async def _(event):
     await eor(event, f"**📍 Started AutoPosting from** `{hel_}`")
 
 
-@bot.on(Speedo_cmd(pattern="rmautopost ?(.*)"))
-@bot.on(sudo_cmd(pattern="rmautopost ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="rmautopost ?(.*)"))
+@speedo.on(sudo_cmd(pattern="rmautopost ?(.*)", allow_sudo=True))
 async def _(event):
     if (event.is_private or event.is_group):
         return await eod(event, "AutoPost Can Only Be Used For Channels.")
@@ -38,7 +38,7 @@ async def _(event):
     remove_post(kk, event.chat_id)
     await eor(event, f"**📍 Stopped AutoPosting From** `{hel_}`")
 
-@bot.on(events.NewMessage())
+@speedo.on(events.NewMessage())
 async def _(event):
     if event.is_private:
         return

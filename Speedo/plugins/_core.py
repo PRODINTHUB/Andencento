@@ -10,8 +10,8 @@ from telethon.tl.types import InputMessagesFilterDocument
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern=r"cmds"))
-@bot.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"cmds"))
+@speedo.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
 async def kk(event):
     if event.fwd_from:
         return
@@ -43,8 +43,8 @@ async def kk(event):
             await event.delete()
 
 
-@bot.on(Speedo_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@speedo.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -68,8 +68,8 @@ async def send(event):
         await eod(event, "File not found..... Kek")
 
 
-@bot.on(Speedo_cmd(pattern="install$", outgoing=True))
-@bot.on(sudo_cmd(pattern="install$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="install$", outgoing=True))
+@speedo.on(sudo_cmd(pattern="install$", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -109,8 +109,8 @@ async def install(event):
             await eod(event, f"**Failed to Install** \n`Error`\n{str(e)}")
             return os.remove(downloaded_file_name)
 
-@bot.on(Speedo_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
+@speedo.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
 async def uninstall(kraken):
     if kraken.fwd_from:
         return
@@ -124,8 +124,8 @@ async def uninstall(kraken):
         await kraken.edit("Error: %s : %s" % (dir_path, e.strerror))
 
 
-@bot.on(Speedo_cmd(pattern=r"unload (?P<shortname>\w+)$"))
-@bot.on(sudo_cmd(pattern=r"unload (?P<shortname>\w+)$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@speedo.on(sudo_cmd(pattern=r"unload (?P<shortname>\w+)$", allow_sudo=True))
 async def unload(event):
     if event.fwd_from:
         return
@@ -141,8 +141,8 @@ async def unload(event):
         )
 
 
-@bot.on(Speedo_cmd(pattern=r"load (?P<shortname>\w+)$"))
-@bot.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@speedo.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
 async def load(event):
     if event.fwd_from:
         return

@@ -3,8 +3,8 @@ import datetime
 
 from . import *
 
-@bot.on(Speedo_cmd(pattern="ping$"))
-@bot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="ping$"))
+@speedo.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def pong(speedo):
     if speedo.fwd_from:
         return

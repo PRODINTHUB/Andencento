@@ -50,8 +50,8 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
-@bot.on(Speedo_cmd(pattern="setgpic$"))
-@bot.on(sudo_cmd(pattern="setgpic$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="setgpic$"))
+@speedo.on(sudo_cmd(pattern="setgpic$", allow_sudo=True))
 @errors_handler
 async def set_group_photo(gpic):
     if gpic.fwd_from:
@@ -97,8 +97,8 @@ async def set_group_photo(gpic):
             )
 
 
-@bot.on(Speedo_cmd(pattern="promote(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="promote(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="promote(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="promote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def promote(promt):
     if promt.fwd_from:
@@ -138,8 +138,8 @@ async def promote(promt):
     )
 
 
-@bot.on(Speedo_cmd(pattern="demote(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="demote(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="demote(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="demote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def demote(dmod):
     if dmod.fwd_from:
@@ -187,8 +187,8 @@ async def watcher(event):
             LOGS.info(str(e))
 
 
-@bot.on(Speedo_cmd(pattern=r"mute ?(.*)"))
-@bot.on(sudo_cmd(pattern=r"mute ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"mute ?(.*)"))
+@speedo.on(sudo_cmd(pattern=r"mute ?(.*)", allow_sudo=True))
 async def muth(speedo):
     if speedo.is_private:
         await eor(speedo, "**Enough of your bullshit  !!**")
@@ -251,8 +251,8 @@ async def muth(speedo):
         )
         
         
-@bot.on(Speedo_cmd(pattern=r"unmute ?(.*)"))
-@bot.on(sudo_cmd(pattern=r"unmute ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"unmute ?(.*)"))
+@speedo.on(sudo_cmd(pattern=r"unmute ?(.*)", allow_sudo=True))
 async def nomuth(evn):
     if evn.is_private:
         await eor(evn, "Talk bich..")
@@ -310,8 +310,8 @@ async def nomuth(evn):
         )
 
 
-@bot.on(Speedo_cmd(pattern="ban(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="ban(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="ban(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="ban(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def ban(bon):
     if bon.fwd_from:
@@ -352,8 +352,8 @@ async def ban(bon):
     )
 
 
-@bot.on(Speedo_cmd(pattern="unban(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="unban(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="unban(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="unban(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def nothanos(unbon):
     if unbon.fwd_from:
@@ -382,8 +382,8 @@ async def nothanos(unbon):
         await speedoevent.edit("Invalid UserId!! Please Recheck it!!")
 
 
-@bot.on(Speedo_cmd(pattern="pin($| (.*))"))
-@bot.on(sudo_cmd(pattern="pin($| (.*))", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="pin($| (.*))"))
+@speedo.on(sudo_cmd(pattern="pin($| (.*))", allow_sudo=True))
 @errors_handler
 async def pin(msg):
     if msg.fwd_from:
@@ -424,8 +424,8 @@ async def pin(msg):
         pass
 
 
-@bot.on(Speedo_cmd(pattern="kick(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="kick(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="kick(?: |$)(.*)"))
+@speedo.on(sudo_cmd(pattern="kick(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def kick(usr):
     if usr.fwd_from:
@@ -462,8 +462,8 @@ async def kick(usr):
     )
 
 
-@bot.on(Speedo_cmd(pattern=f"zombies ?(.*)"))
-@bot.on(sudo_cmd(pattern=f"zombies ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=f"zombies ?(.*)"))
+@speedo.on(sudo_cmd(pattern=f"zombies ?(.*)", allow_sudo=True))
 async def rm_deletedacc(show):
     if show.fwd_from:
         return
@@ -517,8 +517,8 @@ async def rm_deletedacc(show):
     )
 
 
-@bot.on(Speedo_cmd(pattern="undlt$"))
-@bot.on(sudo_cmd(pattern="undlt$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="undlt$"))
+@speedo.on(sudo_cmd(pattern="undlt$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

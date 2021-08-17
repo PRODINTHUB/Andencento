@@ -24,8 +24,8 @@ def progress(current, total):
 
 DOGBIN_URL = "https://del.dog/"
 
-@bot.on(Speedo_cmd(pattern="paste ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="paste ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="paste ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="paste ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -74,8 +74,8 @@ async def _(event):
         await eod(evnt, f"**ERROR !!**\n\n`{str(e)}`")
 
 
-@bot.on(Speedo_cmd(pattern="getpaste(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="getpaste(?: |$)(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="getpaste(?: |$)(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="getpaste(?: |$)(.*)", allow_sudo=True))
 async def get_dogbin_content(dog_url):
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
@@ -118,8 +118,8 @@ async def get_dogbin_content(dog_url):
 
     await eor(dog_url, reply_text)
 
-@bot.on(Speedo_cmd(pattern="neko ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="neko ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="neko ?(.*)", outgoing=True))
+@speedo.on(sudo_cmd(pattern="neko ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

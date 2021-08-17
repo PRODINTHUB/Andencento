@@ -10,8 +10,8 @@ from . import *
 SUDO_WALA = Config.SUDO_USERS
 lg_id = Config.LOGGER_ID
 
-@bot.on(Speedo_cmd(pattern="spam (.*)"))
-@bot.on(sudo_cmd(pattern="spam (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="spam (.*)"))
+@speedo.on(sudo_cmd(pattern="spam (.*)", allow_sudo=True))
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -24,8 +24,8 @@ async def spammer(e):
         )
 
 
-@bot.on(Speedo_cmd(pattern="bigspam"))
-@bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="bigspam"))
+@speedo.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
 async def bigspam(speedo):
     if not speedo.text[0].isalpha() and speedo.text[0] not in ("/", "#", "@", "!"):
         speedo_msg = speedo.text
@@ -43,8 +43,8 @@ async def bigspam(speedo):
         )
 
 
-@bot.on(Speedo_cmd("dspam (.*)"))
-@bot.on(sudo_cmd(pattern="dspam (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd("dspam (.*)"))
+@speedo.on(sudo_cmd(pattern="dspam (.*)", allow_sudo=True))
 async def spammer(e):
     if e.fwd_from:
         return
@@ -58,8 +58,8 @@ async def spammer(e):
         await asyncio.sleep(spamDelay)
 
 
-@bot.on(Speedo_cmd(pattern="uspam ?(.*)"))
-@bot.on(sudo_cmd(pattern="uspam ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="uspam ?(.*)"))
+@speedo.on(sudo_cmd(pattern="uspam ?(.*)", allow_sudo=True))
 async def _(event):
     reply_msg = await event.get_reply_message()
     speedo = event.pattern_match.group(1)
@@ -75,8 +75,8 @@ async def _(event):
 
 # Special Break Spam Module For Speedo Made By Chirag Bhargava.
 # Team Speedo
-@bot.on(Speedo_cmd(pattern="bspam ?(.*)"))
-@bot.on(sudo_cmd(pattern="bspam ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="bspam ?(.*)"))
+@speedo.on(sudo_cmd(pattern="bspam ?(.*)", allow_sudo=True))
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -101,8 +101,8 @@ async def spammer(e):
         )
 
 
-@bot.on(Speedo_cmd(pattern="mspam (.*)"))
-@bot.on(sudo_cmd(pattern="mspam (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="mspam (.*)"))
+@speedo.on(sudo_cmd(pattern="mspam (.*)", allow_sudo=True))
 async def tiny_pic_spam(e):
     sender = await e.get_sender()
     me = await e.client.get_me()

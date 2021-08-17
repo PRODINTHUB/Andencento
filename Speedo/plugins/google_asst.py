@@ -9,8 +9,8 @@ from gtts import gTTS
 from . import *
 
 
-@bot.on(Speedo_cmd(pattern="trt ?(.*)"))
-@bot.on(sudo_cmd(pattern="trt ?(.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="trt ?(.*)"))
+@speedo.on(sudo_cmd(pattern="trt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -44,16 +44,16 @@ async def _(event):
     except Exception as exc:
         await edit_or_reply(event, str(exc))
 
-@bot.on(Speedo_cmd(pattern=r"trc", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"trc", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern=r"trc", outgoing=True))
+@speedo.on(sudo_cmd(pattern=r"trc", allow_sudo=True))
 async def _(speedo):
     if speedo.fwd_from:
         return
     await edit_or_reply(speedo, "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/SfMæisér--𐌷𐌴ࠋࠋ𐌱𐍈𐌸-𐌾𐌰𐍀𐌾-06-04) ⚡", link_preview=False)
 
 
-@bot.on(Speedo_cmd(pattern="voice (.*)"))
-@bot.on(sudo_cmd(pattern="voice (.*)", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="voice (.*)"))
+@speedo.on(sudo_cmd(pattern="voice (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
