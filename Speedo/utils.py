@@ -19,7 +19,8 @@ from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 from Speedo.variables import Var
-
+from logging import basicConfig, getLogger, INFO, DEBUG
+LOGS = getLogger(__name__)
 from Speedo import *
 
 from Speedo.exceptions import CancelProcess
@@ -37,10 +38,13 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
+        from logging import basicConfig, getLogger, INFO, DEBUG
+        LOGS = getLogger(__name__)
         LOGS.info("Successfully imported " + shortname)
     else:
         import Speedo.utils
-
+        from logging import basicConfig, getLogger, INFO, DEBUG
+        LOGS = getLogger(__name__)
         path = Path(f"Speedo/plugins/{shortname}.py")
         name = "Speedo.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
