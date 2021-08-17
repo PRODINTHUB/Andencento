@@ -4,7 +4,7 @@ import time
 import datetime
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-
+os.system("pip install html_telegraph_poster")
 import heroku3
 from dotenv import load_dotenv
 from requests import get
