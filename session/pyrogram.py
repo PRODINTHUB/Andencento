@@ -3,7 +3,9 @@ import logging
 import os
 Session = os.environ.get("Client", None)
 if Session == "Tele":
-    break
+    os.system("pip") or None
+else:
+    pass
 import time
 import motor.motor_asyncio
 from pyrogram import Client
