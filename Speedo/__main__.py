@@ -12,7 +12,7 @@ from Speedo.config import Config
 from Speedo.utils import load_module
 from Speedo.version import __speedo__ as speedover
 hl = Config.HANDLER
-HELL_PIC = Config.ALIVE_PIC
+SPEEDO_PIC = Config.ALIVE_PIC
 # let's get the bot ready
 async def speedo_bot(bot_token):
     try:
@@ -85,7 +85,7 @@ async def speedo_is_on():
         if Config.LOGGER_ID != 0:
             await bot.send_file(
                 Config.LOGGER_ID,
-                HELL_PIC,
+                SPEEDO_PIC,
                 caption=f"#START \n\nDeployed SPEEDOBOT Successfully\n\n**SPEEDOBOT - {speedover}**\n\nType `{hl}ping` or `{hl}alive` to check! \n\nJoin [SPEEDOBOT Channel](t.me/Its_Speedo) for Updates & [SPEEDOBOT Chat](t.me/Speedo_chat) for any query regarding SPEEDOBOT",
             )
     except Exception as e:

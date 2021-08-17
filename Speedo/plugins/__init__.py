@@ -8,9 +8,9 @@ from Speedo.version import __speedo__
 from telethon import version
 
 
-HELL_USER = bot.me.first_name
+SPEEDO_USER = bot.me.first_name
 ForGo10God = bot.uid
-speedo_mention = f"[{HELL_USER}](tg://user?id={ForGo10God})"
+speedo_mention = f"[{SPEEDO_USER}](tg://user?id={ForGo10God})"
 speedo_logo = "./Speedo/resources/pics/Speedo_logo.jpg"
 cjb = "./Speedo/resources/pics/cjb.jpg"
 restlo = "./Speedo/resources/pics/rest.jpeg"

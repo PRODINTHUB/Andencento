@@ -40,7 +40,7 @@ mssge = (
 
 USER_BOT_WARN_ZERO = "Enough Of Your Flooding In My Master's PM!! \n\n**🚫 Blocked and Reported**"
 
-HELL_FIRST = (
+SPEEDO_FIRST = (
     "**🔥 SPEEDOBOT Prîvã†é Sêçürïty Prø†öçõl 🔥**\n\nThis is to inform you that "
     "{} is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**Please Choose Why You Are Here!!**"
@@ -153,7 +153,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
         elif event.query.user_id == bot.uid and query == "alive":
             he_ll = alive_txt.format(Config.ALIVE_MSG, tel_ver, speedo_ver, abuse_m, is_sudo)
             alv_btn = [
-                [Button.url(f"{HELL_USER}", f"tg://openmessage?user_id={ForGo10God}")],
+                [Button.url(f"{SPEEDO_USER}", f"tg://openmessage?user_id={ForGo10God}")],
                 [Button.url("My Channel", f"https://t.me/{my_channel}"), 
                 Button.url("My Group", f"https://t.me/{my_group}")],
             ]
@@ -181,7 +181,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 )
 
         elif event.query.user_id == bot.uid and query == "pm_warn":
-            hel_l = HELL_FIRST.format(speedo_mention, mssge)
+            hel_l = SPEEDO_FIRST.format(speedo_mention, mssge)
             result = builder.photo(
                 file=speedo_pic,
                 text=hel_l,

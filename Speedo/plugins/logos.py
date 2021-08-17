@@ -14,7 +14,7 @@ PICS_STR = []
 @bot.on(sudo_cmd(pattern=r"logo ?(.*)", allow_sudo=True))
 async def lg1(speedoevent):
     event = await eor(speedoevent, "`Processing.....`")
-    fnt = await get_font_file(speedoevent.client, "@HELL_FRONTS")
+    fnt = await get_font_file(speedoevent.client, "@SPEEDO_FRONTS")
     if speedoevent.reply_to_msg_id:
         rply = await speedoevent.get_reply_message()
         logo_ = await rply.download_media()

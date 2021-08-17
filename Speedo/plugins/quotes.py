@@ -48,7 +48,7 @@ async def Sahih(e):
 @bot.on(Speedo_cmd(pattern=f"qhi$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"qhi$", allow_sudo=True))
 async def hoi(e):
-    txt = random.choice(HELLOSTR)
+    txt = random.choice(SPEEDOOSTR)
     await eor(e, txt)
 
 @bot.on(Speedo_cmd(pattern=f"gdbye$", outgoing=True))

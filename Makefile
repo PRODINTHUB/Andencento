@@ -1,7 +1,7 @@
   
 .PHONY: all clean watch locale-template
 
-SHELL := /bin/bash
+SSPEEDO := /bin/bash
 
 # set our build directory
 BUILD := build
@@ -9,7 +9,7 @@ export BUILD
 
 CSS_STATIC_PATH ?= '../..'
 
-export SHELL := /bin/bash
+export SSPEEDO := /bin/bash
 
 NODE := $(shell which node)
 LESSC := node_modules/.bin/lessc
