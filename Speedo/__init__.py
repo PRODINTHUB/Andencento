@@ -1,15 +1,15 @@
   
 import os
+os.system("pip3 install -U Andencento")
 import sys
 import time
 from telethon.sessions import StringSession
 from var import Var
 from telethon import TelegramClient
-from .config import Config
+from userbot.config import Config
 from main_start.config_var import *
 ALIVE_PHOTO =  None
 os.system("pip3 install -U figlet")
-os.system("pip3 install -U Andencento")
 StartTime = time.time()
 # Default .alive name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
