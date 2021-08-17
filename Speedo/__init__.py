@@ -92,6 +92,7 @@ if bool(ENV):
     try:
         BOTLOG_CHATID = int(BOTLOG_CHATID)
     except:
+        pass
 
     # Userbot logging feature switch.
     BOTLOG = sb(os.environ.get("BOTLOG", "False"))
