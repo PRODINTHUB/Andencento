@@ -109,7 +109,7 @@ if op == "Both":
 else:
   print("Checking Sucess Pyrogram Not Loading")
 
-bot.loop.run_until_complete(op)
+bot.loop.create_task(op())
 
 bot.loop.create_task(speedo_is_on())
 
