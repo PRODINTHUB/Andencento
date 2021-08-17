@@ -107,7 +107,7 @@ def admin_cmd(pattern=None, command=None, **args):
             except BaseException:
                 CMD_LIST.update({file_test: [cmd]})
         else:
-            if len(HNDLR) == 2:
+            if HNDLR == 2:
                 catreg = "^" + HNDLR
                 reg = HNDLR[1]
             elif len(HNDLR) == 1:
