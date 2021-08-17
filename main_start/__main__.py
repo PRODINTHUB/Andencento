@@ -9,11 +9,12 @@ elif Session == "both":
   
   print("Starting Telethon && pyrogram")
   from session.telethon_main import *
-  async def op():
+  async def kk():
     await mongo_check()
     await run_bot()
     Speedo.loop.run_until_complete(run_bot())
     speedo.loop.run_until_complete(run_bot())
 else:
   from session.telethon_main import *
-  await speedo.start()
+  async def impro(): 
+   await speedo.start()
