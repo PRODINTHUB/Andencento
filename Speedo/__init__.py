@@ -43,11 +43,11 @@ if Config.SPEEDOBOT_SESSION:
     session_name = str(Config.SPEEDOBOT_SESSION)
     try:
         if session_name.endswith("="):
-            bot = TelegramClient(
+            speedo = TelegramClient(
                 StringSession(session_name), Config.APP_ID, Config.API_HASH
             )
         else:
-            bot = TelegramClient(
+            speedo = TelegramClient(
                 "BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
             ).start(bot_token=Config.SPEEDOBOT_SESSION)
     except Exception as e:
