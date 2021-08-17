@@ -16,7 +16,7 @@ ALIVE_PHOTO = os.environ.get("ALIVE_PHOTO", None)
 botnickname = os.environ.get("botnickname", None)
 ses = os.environ.get("TELETHON_SESSION", None)
 if ses:
-    session_name = str(ses)
+    session_name = (ses)
     speedo = TelegramClient(ses(session_name), Config.API_ID, Config.API_HASH)
 else:
     session_name = "startup"
