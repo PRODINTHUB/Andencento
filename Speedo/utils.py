@@ -15,7 +15,7 @@ from time import gmtime, strftime
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-
+Config.COMMAND_HAND_LER = os.environ.get("HANDLER", None)
 from var import Var
 from config import Config
 
