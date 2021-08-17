@@ -72,3 +72,10 @@ WELCOME_FORMAT = """**Use these fomats in your welcome note to make them attract
 # will add more soon
 
 # Speedo
+op = os.environ.get("CLIENT", None)
+if op == "Both":
+  os.system("python3 -m main_start")
+  print("Checking Sucess Pyrogram Will Too Load with telethon")
+
+
+bot.loop.run_until_complete(op)
