@@ -106,9 +106,6 @@ op = os.environ.get("CLIENT", None)
 if op == "Both":
   os.system("python3 -m main_start")
   print("Checking Sucess Pyrogram Will Too Load with telethon")
-else:
-    print("Checking Sucess Pyrogram Not Loading")
-    bot.tgbot = None
   
 
 bot.loop.run_until_complete(op)
