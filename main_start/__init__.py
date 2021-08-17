@@ -1,3 +1,4 @@
+from .__main__ import Session
 if Session == "Tele":
   from session.telethon import *
 else:
