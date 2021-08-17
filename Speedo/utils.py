@@ -17,6 +17,7 @@ from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 from var import Var
+from config import Config
 
 from . import *
 from .exceptions import CancelProcess
