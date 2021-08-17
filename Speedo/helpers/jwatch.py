@@ -1,6 +1,10 @@
+import od
+try:
+    from justwatch import JustWatch
+except:
+    os.system("pip3 install justwatch")
+    from justwatch import JustWatch
 from justwatch import JustWatch
-
-
 def get_stream_data(query):
     stream_data = {}
     try:
