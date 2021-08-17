@@ -108,8 +108,6 @@ if op == "Both":
   print("Checking Sucess Pyrogram Will Too Load with telethon")
 else:
   print("Checking Sucess Pyrogram Not Loading")
-  return
-
 
 bot.loop.run_until_complete(op)
 
