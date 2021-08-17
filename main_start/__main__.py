@@ -6,7 +6,7 @@ if Session == "Pyro":
     await mongo_check()
     await run_bot()
     Speedo.loop.run_until_complete(run_bot())
-elif Session == "Pyro":
+elif Session == "both":
   async def impro():
     await mongo_check()
     await run_bot()
