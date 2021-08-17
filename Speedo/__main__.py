@@ -38,6 +38,18 @@ else:
         print ('Lookup Completed And Initialzed')
     else:
         bot.start()
+
+print("Telethon All Configration Done checking that do you want Pyrogram Also or not")
+
+op = os.environ.get("CLIENT", None)
+if op == "Both":
+  os.system("python3 -m main_start")
+  print("Checking Sucess Pyrogram Will Too Load with telethon")
+else:
+  print("Checking Sucess Pyrogram Not Loading")
+  pass
+
+print("Loading Modules")
 import glob
 path = 'Speedo/plugins/assistant/*.py'
 files = glob.glob(path)
@@ -58,11 +70,7 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 print("Sucessfully Started Telethon Version Speedo Fastest bot")
-op = os.environ.get("CLIENT", None)
-if op == "Both":
-  os.system("python3 -m main_start")
-else:
-  pass
+
 
 bot.loop.run_until_complete(op)
 if len(argv) not in (1, 3, 4):
