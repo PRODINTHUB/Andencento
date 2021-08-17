@@ -28,7 +28,7 @@ sudo_id = Config.AFS
 
 if not Config.STRINGSESSION:
     logging.error("No String Session Found! Speedo is Exiting!")
-    quit(1)
+    return
 
 if not Config.API_ID:
     logging.error("No Api-ID Found! Speedo is Exiting!")
@@ -40,7 +40,7 @@ if not Config.API_HASH:
 
 if not Config.LOG_GRP:
     logging.error("No Log Group ID Found! Speedo is Exiting!")
-    quit(1)
+    return
 
 
 # Clients - Upto 4 Clients is Supported!
@@ -51,6 +51,7 @@ if Config.STRINGSESSION:
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
+Speedo = None
 if Config.STRINGSESSION_2:
     Speedo2 = Client(
         Config.STRINGSESSION_2,
