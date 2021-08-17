@@ -2,7 +2,7 @@
 import logging
 import os
 Session = os.environ.get("Client", None)
-if Session = "Tele":
+if Session == "Tele":
     return
 import time
 import motor.motor_asyncio
