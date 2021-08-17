@@ -5,7 +5,7 @@ import sys
 from telethon.sessions import StringSession
 from telethon import SpeedoClient
 
-
+Session = os.environ.get("Client", None)
 tele_session = os.environ.get("TELETHON_SESSION", None)
 ap = os.environ.get("API_ID", None)
 API = os.environ.get("API_HASH", None)
