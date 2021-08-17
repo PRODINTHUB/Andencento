@@ -6,4 +6,5 @@ if Session == "Pyro":
     await run_bot()
     Speedo.loop.run_until_complete(run_bot())
 else:
-  await mongo_check()
+  async def impro():
+    print("Starting Telethon Since You have chosed Telethon")
