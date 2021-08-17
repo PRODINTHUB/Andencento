@@ -5,6 +5,7 @@ import time
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 from .config import Config
+from ..main_start.config_var import *
 ALIVE_PHOTO =  None
 StartTime = time.time()
 # Default .alive name
