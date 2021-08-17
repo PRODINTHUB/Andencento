@@ -21,4 +21,4 @@ else:
 
 
 if __name__ == "__main__":
-  Speedo.loop.run_until_complete(run_bot()) or Speedo.loop.run_until_complete(kk()) or speedo.loop.run_until_complete(impro())
+  speedo.loop.run_until_complete(run_bot()) or Speedo.loop.run_until_complete(kk()) or speedo.loop.run_until_complete(impro())
