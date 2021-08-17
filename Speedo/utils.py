@@ -33,7 +33,7 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import session.client.utils
+        import Speedo.utils
 
         path = Path(f"Speedo/plugins/{shortname}.py")
         name = "Speedo.plugins.{}".format(shortname)
@@ -42,7 +42,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         LOGS.info("Successfully imported " + shortname)
     else:
-        import session.client.utils
+        import Speedo.utils
 
         path = Path(f"Speedo/plugins/{shortname}.py")
         name = "Speedo.plugins.{}".format(shortname)
