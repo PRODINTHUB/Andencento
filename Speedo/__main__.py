@@ -107,9 +107,10 @@ if op == "Both":
   os.system("python3 -m main_start")
   print("Checking Sucess Pyrogram Will Too Load with telethon")
 else:
+    tbot.run_until_disconnect()
   print("Checking Sucess Pyrogram Not Loading")
 
-bot.loop.create_task(op())
+bot.loop.run_until_complete(op)
 
 bot.loop.create_task(speedo_is_on())
 
