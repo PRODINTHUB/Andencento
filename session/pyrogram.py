@@ -45,7 +45,7 @@ if not Config.API_HASH:
 
 if not Config.LOG_GRP:
     logging.error("No Log Group ID Found! Speedo is Exiting!")
-    return
+    quit(1)
 
 
 # Clients - Upto 4 Clients is Supported!
