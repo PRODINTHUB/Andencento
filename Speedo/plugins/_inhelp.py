@@ -118,7 +118,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 result = builder.document(
                     help_pic,
                     text=help_msg,
-                    title="HellBot Alive",
+                    title="Speedo Alive",
                     buttons=veriler[1],
                     link_preview=False,
                 )
@@ -168,14 +168,14 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 result = builder.document(
                     ALV_PIC,
                     text=he_ll,
-                    title="HellBot Alive",
+                    title="Speedo Alive",
                     buttons=alv_btn,
                     link_preview=False,
                 )
             else:
                 result = builder.article(
                     text=he_ll,
-                    title="HellBot Alive",
+                    title="Speedo Alive",
                     buttons=alv_btn,
                     link_preview=False,
                 )
@@ -200,8 +200,8 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 title="Repository",
                 text=f"**⚡ ʟɛɢɛռɖaʀʏ ᴀғ Speedo ⚡**",
                 buttons=[
-                    [Button.url("📑 Repo 📑", "https://github.com/The-HellBot/HellBot")],
-                    [Button.url("🚀 Deploy 🚀", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FThe-HellBot%2FHellBot&template=https%3A%2F%2Fgithub.com%2Fthe-Speedo%2FSpeedo")],
+                    [Button.url("📑 Repo 📑", "https://github.com/The-Speedo/Speedo")],
+                    [Button.url("🚀 Deploy 🚀", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FThe-Speedo%2FSpeedo&template=https%3A%2F%2Fgithub.com%2Fthe-Speedo%2FSpeedo")],
                 ],
             )
 
@@ -216,18 +216,18 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
 
         else:
             result = builder.article(
-                "@Its_HellBot",
+                "@Its_Speedo",
                 text="""**Hey! This is [SPEEDOBOT](https://t.me/its_Speedo) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/Its_HellBot"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/Its_Speedo"),
                         custom.Button.url(
                             "⚡ GROUP ⚡", "https://t.me/Speedo_chat"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/The-HellBot/HellBot"),
+                            "✨ REPO ✨", "https://github.com/The-Speedo/Speedo"),
                         custom.Button.url
                     (
                             "🔰 TUTORIAL 🔰", "https://youtu.be/M2FQJq_sHp4"

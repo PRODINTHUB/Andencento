@@ -37,9 +37,9 @@ else:
                 "BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
             ).start(bot_token=Config.BOT_TOKEN)
             LOGS.info("Checking Completed. Proceeding to next step...")
-            LOGS.info("🔰 Starting HellBot 🔰")
+            LOGS.info("🔰 Starting Speedo 🔰")
             bot.loop.run_until_complete(speedo_bot(Config.BOT_USERNAME))
-            LOGS.info("🔥 HellBot Startup Completed 🔥")
+            LOGS.info("🔥 Speedo Startup Completed 🔥")
         else:
             bot.start()
     except Exception as e:
@@ -56,7 +56,7 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 # Extra Modules...
-# extra_repo = Config.EXTRA_REPO or "https://github.com/The-HellBot/Extra"
+# extra_repo = Config.EXTRA_REPO or "https://github.com/The-Speedo/Extra"
 # if Config.EXTRA == "True":
 #     try:
 #         os.system(f"git clone {extra_repo}")
@@ -75,9 +75,9 @@ for name in files:
 # let the party begin...
 LOGS.info("Starting Bot Mode !")
 tbot.start()
-LOGS.info("⚡ Your HellBot Is Now Working ⚡")
+LOGS.info("⚡ Your Speedo Is Now Working ⚡")
 LOGS.info(
-    "Head to @Its_HellBot for Updates. Also join chat group to get help regarding to HellBot."
+    "Head to @Its_Speedo for Updates. Also join chat group to get help regarding to Speedo."
 )
 
 # that's life...
@@ -87,20 +87,20 @@ async def speedo_is_on():
             await bot.send_file(
                 Config.LOGGER_ID,
                 HELL_PIC,
-                caption=f"#START \n\nDeployed SPEEDOBOT Successfully\n\n**SPEEDOBOT - {speedover}**\n\nType `{hl}ping` or `{hl}alive` to check! \n\nJoin [SPEEDOBOT Channel](t.me/Its_HellBot) for Updates & [SPEEDOBOT Chat](t.me/Speedo_chat) for any query regarding SPEEDOBOT",
+                caption=f"#START \n\nDeployed SPEEDOBOT Successfully\n\n**SPEEDOBOT - {speedover}**\n\nType `{hl}ping` or `{hl}alive` to check! \n\nJoin [SPEEDOBOT Channel](t.me/Its_Speedo) for Updates & [SPEEDOBOT Chat](t.me/Speedo_chat) for any query regarding SPEEDOBOT",
             )
     except Exception as e:
         LOGS.info(str(e))
 
-# Join HellBot Channel after deploying 🤐😅
+# Join Speedo Channel after deploying 🤐😅
     try:
-        await bot(JoinChannelRequest("@Its_HellBot"))
+        await bot(JoinChannelRequest("@Its_Speedo"))
     except BaseException:
         pass
 
 # Why not come here and chat??
 #    try:
-#        await bot(JoinChannelRequest("@HellBot_Chat"))
+#        await bot(JoinChannelRequest("@Speedo_Chat"))
 #    except BaseException:
 #        pass
 

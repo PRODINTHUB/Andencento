@@ -54,7 +54,7 @@ async def lg1(speedoevent):
     draw.text(
         (w_, h_), text, font=font, fill="white", stroke_width=strik, stroke_fill="black"
     )
-    file_name = "HellBot.png"
+    file_name = "Speedo.png"
     img.save(file_name, "png")
     await bot.send_file(
         speedoevent.chat_id,

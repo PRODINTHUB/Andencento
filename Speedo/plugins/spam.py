@@ -73,8 +73,8 @@ async def _(event):
         await bot.send_message(event.chat_id, input_str)
 
 
-# Special Break Spam Module For HellBot Made By Chirag Bhargava.
-# Team HellBot
+# Special Break Spam Module For Speedo Made By Chirag Bhargava.
+# Team Speedo
 @bot.on(Speedo_cmd(pattern="bspam ?(.*)"))
 @bot.on(sudo_cmd(pattern="bspam ?(.*)", allow_sudo=True))
 async def spammer(e):

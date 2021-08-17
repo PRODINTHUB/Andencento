@@ -9,8 +9,8 @@ from . import *
 msg = f"""
 **⚡ ʟɛɢɛռɖaʀʏ ᴀғ Speedo ⚡**
 
-  •        [📑 Repo 📑](https://github.com/The-HellBot/HellBot)
-  •        [🚀 Deploy 🚀](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FThe-HellBot%2FHellBot&template=https%3A%2F%2Fgithub.com%2Fthe-Speedo%2FSpeedo)
+  •        [📑 Repo 📑](https://github.com/The-Speedo/Speedo)
+  •        [🚀 Deploy 🚀](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FThe-Speedo%2FSpeedo&template=https%3A%2F%2Fgithub.com%2Fthe-Speedo%2FSpeedo)
 
   •  ©️ {speedo_channel} ™
 """

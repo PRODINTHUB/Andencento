@@ -101,7 +101,7 @@ async def kang(args):
         packnick = (
             f"{Speedo} Vol.{pack}"
             if Speedo
-            else f"@{user.username}'s HellBot Vol.{pack}"
+            else f"@{user.username}'s Speedo Vol.{pack}"
         )
         cmd = "/newpack"
         file = io.BytesIO()
@@ -137,7 +137,7 @@ async def kang(args):
                     packnick = (
                         f"{Speedo} Vol.{pack}"
                         if Speedo
-                        else f"@{user.username}'s HellBot Vol.{pack}"
+                        else f"@{user.username}'s Speedo Vol.{pack}"
                     )
                     await speedo.edit(
                         "`Switching to Pack "
