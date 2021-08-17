@@ -12,8 +12,7 @@ from Speedo.config import Config
 from Speedo.utils import load_module
 from Speedo.version import __speedo__ as speedover
 hl = Config.HANDLER
-HELL_PIC = Config.ALIVE_PIC or "https://telegra.ph/file/ea9e11f7c9db21c1b8d5e.mp4"
-
+HELL_PIC = Config.ALIVE_PIC
 # let's get the bot ready
 async def speedo_bot(bot_token):
     try:
