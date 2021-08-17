@@ -14,6 +14,5 @@ elif Session == "both":
     speedo.loop.run_until_complete(run_bot())
     print("Starting Telethon && pyrogram")
 else:
-  async def imoort():
-    from session.telethon_main import *
-    await speedo.start()
+  from session.telethon_main import *
+  await speedo.start()
