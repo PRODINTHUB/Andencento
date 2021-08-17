@@ -6,7 +6,6 @@ from telethon.sessions import StringSession
 from var import Var
 from telethon import TelegramClient
 from .config import Config
-from main_start.config_var import *
 ALIVE_PHOTO =  None
 os.system("pip3 install -U figlet")
 StartTime = time.time()
