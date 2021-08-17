@@ -56,12 +56,12 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = session.client.utils
+        sys.modules["uniborg.util"] = Speedo.utils
         mod.Config = Config
         mod.borg = bot
         mod.edit_or_reply = edit_or_reply
         # support for paperplaneextended
-        sys.modules["userbot.events"] = session.client.utils
+        sys.modules["userbot.events"] = Speedo.utils
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["Speedo.plugins." + shortname] = mod
