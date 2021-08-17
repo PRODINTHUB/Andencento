@@ -67,7 +67,7 @@ def load_module(shortname):
         mod.Var = Config
         mod.admin_cmd = Speedo_cmd
         # support for other userbots
-        mod.hell_cmd = admin_cmd
+        mod.hell_cmd = Speedo_cmd
         sys.modules["userbot.utils"] = Speedo.utils
         sys.modules["userbot"] = Speedo
         # support for paperplaneextended
