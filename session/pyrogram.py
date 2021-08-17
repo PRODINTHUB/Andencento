@@ -1,13 +1,11 @@
 
 import logging
 import os
-Session = os.environ.get("Client", None)
 import time
 import motor.motor_asyncio
 from pyrogram import Client
 
 from .config_var import Config
-
 
 # Note StartUp Time - To Capture Uptime.
 start_time = time.time()
@@ -30,6 +28,7 @@ sudo_id = Config.AFS
 
 if not Config.STRINGSESSION:
     logging.error("No String Session Found! Speedo is Exiting!")
+    quit(1)
 
 if not Config.API_ID:
     logging.error("No Api-ID Found! Speedo is Exiting!")
@@ -52,7 +51,6 @@ if Config.STRINGSESSION:
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
-Speedo = None
 if Config.STRINGSESSION_2:
     Speedo2 = Client(
         Config.STRINGSESSION_2,
