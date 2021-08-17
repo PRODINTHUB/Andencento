@@ -21,7 +21,7 @@ else:
     session_name = "startup"
     speedo = TelegramClient(session_name, Config.API_ID, Config.API_HASH)
 
-bot = Speedo
+bot = speedo
 CMD_LIST = {}
 # for later purposes
 CMD_HELP = {}
