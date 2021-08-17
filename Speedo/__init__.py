@@ -59,6 +59,7 @@ else:
 
 tbot = TelegramClient('Speedo', api_id=Config.APP_ID, api_hash=Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
 
+bot = speedo
 
 # global variables
 CMD_LIST = {}
