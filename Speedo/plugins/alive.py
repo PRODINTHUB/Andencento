@@ -19,8 +19,8 @@ alive_c += f"•♦• Channel      :  {speedo_channel}\n"
 
 #-------------------------------------------------------------------------------
 
-@speedo.on(Speedo_cmd(outgoing=True, pattern="alive$"))
-@speedo.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+@speedo.on(Speedo_cmd(outgoing=True, pattern="speedo$"))
+@speedo.on(sudo_cmd(pattern="speedo$", allow_sudo=True))
 async def up(speedo):
     if speedo.fwd_from:
         return
@@ -30,7 +30,7 @@ async def up(speedo):
     await speedo.delete()
 
 msg = f"""
-**⚡ нєℓℓвσт ιѕ σиℓιиє ⚡**
+**⚡ 𝒮𝒫𝐸𝐸𝒟𝒪 ιѕ σиℓιиє ⚡**
 {Config.ALIVE_MSG}
 **🏅 𝙱𝚘𝚝 𝚂𝚝𝚊𝚝𝚞𝚜 🏅**
 **Telethon :**  `{tel_ver}`
@@ -40,8 +40,8 @@ msg = f"""
 """
 botname = Config.BOT_USERNAME
 
-@speedo.on(Speedo_cmd(pattern="speedo$"))
-@speedo.on(sudo_cmd(pattern="speedo$", allow_sudo=True))
+@speedo.on(Speedo_cmd(pattern="alive$"))
+@speedo.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def speedo_a(event):
     try:
         speedo = await bot.inline_query(botname, "alive")
@@ -53,9 +53,9 @@ async def speedo_a(event):
 
 
 CmdHelp("alive").add_command(
-  "alive", None, "Shows the Default Alive Message"
+  "speedo", None, "Shows the Default Alive Message"
 ).add_command(
-  "speedo", None, "Shows Inline Alive Menu with more details."
+  "alive", None, "Shows Inline Alive Menu with more details."
 ).add_warning(
   "✅ Harmless Module"
 ).add()
