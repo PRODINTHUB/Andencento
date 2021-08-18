@@ -41,13 +41,13 @@ mssge = (
 USER_BOT_WARN_ZERO = "Enough Of Your Flooding In My Master's PM!! \n\n**🚫 Blocked and Reported**"
 
 SPEEDO_FIRST = (
-    "**🔥 𝒮𝒫𝐸𝐸𝒟𝒪𝐵𝒪𝒯 𝒫𝑅𝐼𝒱𝒜𝒯𝐸 𝒮𝐸𝒞𝒰𝑅𝐼𝒯𝒴 𝒫𝑅𝒪𝒯𝒪𝒞𝒪𝐿 🔥**\n\nThis is to inform you that "
+    "**🔥 𝒮𝒫𝐸𝐸𝒟𝒪 𝒫𝑅𝐼𝒱𝒜𝒯𝐸 𝒮𝐸𝒞𝒰𝑅𝐼𝒯𝒴 𝒫𝑅𝒪𝒯𝒪𝒞𝒪𝐿 🔥**\n\nThis is to inform you that "
     "{} is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**Please Choose Why You Are Here!!**"
 )
 
 alive_txt = """
-**⚜️ нєℓℓвσт ιѕ σиℓιиє ⚜️**
+**⚜️ 𝒮𝒫𝐸𝐸𝒟𝒪 ιѕ σиℓιиє ⚜️**
 {}
 **🏅 𝙱𝚘𝚝 𝚂𝚝𝚊𝚝𝚞𝚜 🏅**
 
