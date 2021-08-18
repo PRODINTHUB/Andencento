@@ -19,10 +19,10 @@ from . import *
 
 speedo_row = Config.BUTTONS_IN_HELP
 speedo_emoji = Config.EMOJI_IN_HELP
-speedo_pic = Config.PMPERMIT_PIC or "https://telegra.ph/file/58df4d86400922aa32acd.jpg"
+speedo_pic = Config.PMPERMIT_PIC or "https://telegra.ph/file/f46b11140c307df13750d.jpg"
 cstm_pmp = Config.CUSTOM_PMPERMIT
 ALV_PIC = Config.ALIVE_PIC
-help_pic = Config.HELP_PIC or "https://telegra.ph/file/62b0f29c8887887f259ac.jpg"
+help_pic = Config.HELP_PIC or "https://telegra.ph/file/f46b11140c307df13750d.jpg"
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
