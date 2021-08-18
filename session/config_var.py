@@ -36,7 +36,7 @@ class Config((object)):
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     STRINGSESSION = os.environ.get("STRINGSESSION", None)
     ASSISTANT_START_PIC = os.environ.get(
-        "ASSISTANT_START_PIC", "https://telegra.ph//file/92c1a600394c723db90fc.jpg"
+        "ASSISTANT_START_PIC", "https://telegra.ph/file/f46b11140c307df13750d.jpg"
     )
     STRINGSESSION_2 = os.environ.get("STRINGSESSION_2", None)
     STRINGSESSION_3 = os.environ.get("STRINGSESSION_3", None)
@@ -58,7 +58,7 @@ class Config((object)):
         "UPSTREAM_REPO", "https://github.com/TeamSpeedo/Speedo"
     )
     ALIVE_IMG = os.environ.get(
-        "ALIVE_IMG", None
+        "ALIVE_IMG", "https://telegra.ph/file/f46b11140c307df13750d.jpg"
     )
     U_BRANCH = "master"
     HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
