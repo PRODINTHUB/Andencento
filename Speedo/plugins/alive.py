@@ -9,7 +9,7 @@ from . import *
 
 #-------------------------------------------------------------------------------
 
-speedo_pic = Config.ALIVE_PIC or "https://telegra.ph/file/ea9e11f7c9db21c1b8d5e.mp4"
+speedo_pic = Config.ALIVE_PIC or "https://telegra.ph/file/f46b11140c307df13750d.jpg"
 alive_c = f"__**🔥🔥Speedo ɨs օռʟɨռɛ🔥🔥**__\n\n"
 alive_c += f"__↼ Øwñêr ⇀__ : 『 {speedo_mention} 』\n\n"
 alive_c += f"•♦• Telethon     :  `{tel_ver}` \n"
