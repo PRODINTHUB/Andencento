@@ -41,7 +41,7 @@ mssge = (
 USER_BOT_WARN_ZERO = "Enough Of Your Flooding In My Master's PM!! \n\n**🚫 Blocked and Reported**"
 
 SPEEDO_FIRST = (
-    "**🔥 SPEEDOBOT Prîvã†é Sêçürïty Prø†öçõl 🔥**\n\nThis is to inform you that "
+    "**🔥 𝒮𝒫𝐸𝐸𝒟𝒪𝐵𝒪𝒯 𝒫𝑅𝐼𝒱𝒜𝒯𝐸 𝒮𝐸𝒞𝒰𝑅𝐼𝒯𝒴 𝒫𝑅𝒪𝒯𝒪𝒞𝒪𝐿 🔥**\n\nThis is to inform you that "
     "{} is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**Please Choose Why You Are Here!!**"
 )
@@ -230,7 +230,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                             "✨ REPO ✨", "https://github.com/The-Speedo/Speedo"),
                         custom.Button.url
                     (
-                            "🔰 TUTORIAL 🔰", "https://youtu.be/M2FQJq_sHp4"
+                            "🔰 TUTORIAL 🔰", "#todo"
                     )
                     ],
                 ],
@@ -256,14 +256,14 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"✅ **Request Registered** \n\n{speedo_mention} will now decide to look for your request or not.\n😐 Till then wait patiently and don't spam!!"
+                f"✅ **𝒟𝑒𝒶𝓇 𝒴𝑜𝓊𝓇 𝑅𝑒𝓆𝓊𝑒𝓈𝓉 𝑅𝑒𝑔𝒾𝓈𝓉𝑒𝓇𝑒𝒹 𝒮𝓊𝒸𝒸𝑒𝓈𝓈𝒻𝓊𝓁** \n\n{speedo_mention} 𝓌𝒾𝓁𝓁 𝓃𝑜𝓌 𝒹𝑒𝒸𝒾𝒹𝑒 𝓉𝑜 𝓁𝑜𝑜𝓀 𝒻𝑜𝓇 𝓎𝑜𝓊𝓇 𝓇𝑒𝓆𝓊𝑒𝓈𝓉 𝑜𝓇 𝓃𝑜𝓉.\n😐 𝒯𝒾𝓁𝓁 𝓉𝒽𝑒𝓃 𝓌𝒶𝒾𝓉 𝓅𝒶𝓉𝒾𝑒𝓃𝓉𝓁𝓎 𝒶𝓃𝒹 𝒹𝑜𝓃'𝓉 𝓈𝓅𝒶𝓂!!"
             )
             target = await event.client(GetFullUserRequest(event.query.user_id))
             first_name = html.escape(target.user.first_name)
             ok = event.query.user_id
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
-            tosend = f"**👀 Hey {speedo_mention} !!** \n\n⚜️ You Got A Request From [{first_name}](tg://user?id={ok}) In PM!!"
+            tosend = f"**👀 Hey {speedo_mention} !!** \n\n⚜️ 𝔜𝔬𝔲 𝔊𝔬𝔱 𝔄 ℜ𝔢𝔮𝔲𝔢𝔰𝔱 𝔉𝔯𝔬𝔪 [{first_name}](tg://user?id={ok}) In PM!!"
             await bot.send_message(LOG_GP, tosend)
 
 
@@ -342,7 +342,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                     link_preview=False,
                 )
             else:
-                reply_pop_up_alert = "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © SPEEDOBOT ™"
+                reply_pop_up_alert = "𝕲𝖊𝖙 𝖄𝖔𝖚𝖗 𝕺𝖜𝖓 𝕻𝖔𝖜𝖊𝖗𝖋𝖚𝖑 𝕭𝖔𝖙 𝕾𝖕𝖊𝖊𝖉𝖔 . © SPEEDOBOT ™"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         
 
@@ -350,9 +350,9 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid or event.query.user_id in Config.SUDO_USERS:
             veriler = custom.Button.inline(f"{speedo_emoji} Re-Open Menu {speedo_emoji}", data="reopen")
-            await event.edit(f"**⚜️ SPEEDOBOT Mêñû Prõvîdêr ìs ñôw Çlösëd ⚜️**\n\n**Bot Of :**  {speedo_mention}\n\n        [©️ SPEEDOBOT ™️]({chnl_link})", buttons=veriler, link_preview=False)
+            await event.edit(f"**⚜️ 𝒮𝓅𝑒𝑒𝒹𝑜 𝑀𝑒𝓃𝓊 𝒞𝓁𝑜𝓈𝑒𝒹 ⚜️**\n\n**Bot Of :**  {speedo_mention}\n\n        [©️ SPEEDOBOT ™️]({chnl_link})", buttons=veriler, link_preview=False)
         else:
-            reply_pop_up_alert = "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © SPEEDOBOT ™"
+            reply_pop_up_alert = "𝕲𝖊𝖙 𝖄𝖔𝖚𝖗 𝕺𝖜𝖓 𝕻𝖔𝖜𝖊𝖗𝖋𝖚𝖑 𝕭𝖔𝖙 𝕾𝖕𝖊𝖊𝖉𝖔. © SPEEDOBOT ™"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
    
 
@@ -372,7 +372,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             )
         else:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © SPEEDOBOT ™",
+                "𝕲𝖊𝖙 𝖄𝖔𝖚𝖗 𝕺𝖜𝖓 𝕻𝖔𝖜𝖊𝖗𝖋𝖚𝖑 𝕭𝖔𝖙 𝕾𝖕𝖊𝖊𝖉𝖔. © SPEEDOBOT ™",
                 cache_time=0,
                 alert=True,
             )
@@ -406,7 +406,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             )
         else:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © SPEEDOBOT ™",
+                "𝕲𝖊𝖙 𝖄𝖔𝖚𝖗 𝕺𝖜𝖓 𝕻𝖔𝖜𝖊𝖗𝖋𝖚𝖑 𝕭𝖔𝖙 𝕾𝖕𝖊𝖊𝖉𝖔. © SPEEDOBOT ™",
                 cache_time=0,
                 alert=True,
             )
@@ -447,7 +447,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             )
         else:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © SPEEDOBOT ™",
+                "𝕲𝖊𝖙 𝖄𝖔𝖚𝖗 𝕺𝖜𝖓 𝕻𝖔𝖜𝖊𝖗𝖋𝖚𝖑 𝕭𝖔𝖙 𝕾𝖕𝖊𝖊𝖉𝖔 © SPEEDOBOT ™",
                 cache_time=0,
                 alert=True,
             )
