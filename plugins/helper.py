@@ -14,7 +14,7 @@ from main_start.helper_func.basic_helpers import edit_or_reply, get_text
 
 
 @speedo_on_cmd(
-    ["help", "helper"],
+    ["ahelp", "helper"],
     cmd_help={
         "help": "Gets Help Menu",
         "example": "{ch}help",
@@ -48,7 +48,7 @@ async def help(client, message):
 
 
 @speedo_on_cmd(
-    ["ahelp", "ahelper"],
+    ["help", "ahelper"],
     cmd_help={
         "help": "Gets Help List & Info",
         "example": "{ch}ahelp (cmd_name)",
