@@ -4,7 +4,10 @@
 
 
 #### A userbot based on telethon and pyrogram
+### String Session Select P fr pyrogram And T For Telethon
+<a href="https://replit.com/@amanpandey7647/Speedo-Session#main.py"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
+#### Coded on scratch
 <details> 
   Api And Languages used for bot,
   CPP = Android Api,
