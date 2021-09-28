@@ -6,4 +6,6 @@ COPY requirements.txt .
 COPY startup.sh .
 RUN bash startup.sh
 COPY . .
+EXPOSE 200
 CMD ["bash", "step.sh"]
+EXPOSE 3000
