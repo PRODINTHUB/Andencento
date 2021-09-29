@@ -15,7 +15,7 @@ import os
 
 
 @speedo_on_cmd(
-    ["help", "helper"],
+    ["ahelp", "helper"],
     cmd_help={
         "help": "Gets Help Menu",
         "example": "{ch}help",
@@ -27,14 +27,10 @@ async def help(client, message):
     if bot:
         starkbot = bot.me
         bot_username = starkbot.username
-        try:
-            nice = await client.get_inline_bot_results(bot=bot_username, query="help")
-            await client.send_inline_bot_result(
-                message.chat.id, nice.query_id, nice.results[0].id, hide_via=True
-            )
-        except BaseException as e:
-            return await f_.edit(engine.get_string("HELP_OPEN_ERROR").format(e))
-        await f_.delete()
+        nice = await client.get_inline_bot_results(bot=bot_username, query="help")
+        await client.send_inline_bot_result(
+            message.chat.id, nice.query_id, nice.results[0].id, hide_via=True
+        )
     else:
         cmd_ = get_text(message)
         if not cmd_:
