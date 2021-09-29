@@ -11,13 +11,13 @@ from main_start import CMD_LIST, bot, XTRA_CMD_LIST
 from main_start.core.decorators import Config, speedo_on_cmd
 from main_start.core.startup_helpers import run_cmd
 from main_start.helper_func.basic_helpers import edit_or_reply, get_text
-
+import os
 
 @speedo_on_cmd(
     ["ahelp", "helper"],
     cmd_help={
         "help": "Gets Help Menu",
-        "example": "{ch}help",
+        "example": "{ch}ahelp",
     },
 )
 async def help(client, message):
@@ -51,7 +51,7 @@ async def help(client, message):
     ["help", "ahelper"],
     cmd_help={
         "help": "Gets Help List & Info",
-        "example": "{ch}ahelp (cmd_name)",
+        "example": "{ch}help (cmd_name)",
     },
 )
 async def help_(client, message):
