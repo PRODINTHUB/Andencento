@@ -87,5 +87,3 @@ if Config.BOT_TOKEN:
         bot_token=Config.BOT_TOKEN,
         sleep_threshold=180,
     )
-else:
-    bot = None
