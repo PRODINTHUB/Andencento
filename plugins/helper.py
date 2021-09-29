@@ -25,7 +25,7 @@ async def help(client, message):
     f_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
     if bot:
         starkbot = bot.me
-        bot_username = starkbot.username
+        bot_username = os.environ.get("BOT_USERNAME")
         try:
             nice = await client.get_inline_bot_results(bot=bot_username, query="help")
             await client.send_inline_bot_result(
