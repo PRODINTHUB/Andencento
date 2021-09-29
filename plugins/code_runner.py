@@ -21,7 +21,13 @@ from main_start.helper_func.basic_helpers import (
     edit_or_send_as_file,
     get_text,
 )
-
+from main_start.helper_func.basic_helpers import (
+    edit_or_reply,
+    edit_or_send_as_file,
+    get_text,
+    get_user,
+    iter_chats,
+)
 @speedo_on_cmd(
     cmd=["exec", "eval"],
     ignore_errors=True,
@@ -31,6 +37,7 @@ async def eval(client, message):
     engine = message.Engine
     stark = await edit_or_reply(message, engine.get_string("PROCESSING"))
     cmd = get_text(message)
+    user = get_user(message, text_)[0]
     if await is_user_sudo(user.id):
       return await msg_.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
     if not cmd:
