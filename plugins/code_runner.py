@@ -35,6 +35,9 @@ from main_start.helper_func.basic_helpers import (
 )
 async def eval(client, message):
     engine = message.Engine
+    ngine = message.Engine
+    msg_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    text_ = get_text(message)
     stark = await edit_or_reply(message, engine.get_string("PROCESSING"))
     cmd = get_text(message)
     user = get_user(message, text_)[0]
@@ -87,6 +90,12 @@ async def aexec(code, client, message):
 )
 async def sed_terminal(client, message):
     engine = message.Engine
+    ngine = message.Engine
+    msg_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    text_ = get_text(message)
+    stark = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    cmd = get_text(message)
+    user = get_user(message, text_)[0]
     stark = await edit_or_reply(message, engine.get_string("WAIT"))
     if await is_user_sudo(user.id):
       return await msg_.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
