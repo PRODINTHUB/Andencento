@@ -1,5 +1,5 @@
 import os
-os.system("pip3 install -U speedtest")
+os.system("pip3 install -U speedtest-cli")
 import speedtest
 from main_start.core.decorators import speedo_on_cmd
 from main_start.helper_func.basic_helpers import edit_or_reply, get_text, edit_or_send_as_file, get_user
