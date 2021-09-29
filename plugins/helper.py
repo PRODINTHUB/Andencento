@@ -13,11 +13,12 @@ from main_start.core.startup_helpers import run_cmd
 from main_start.helper_func.basic_helpers import edit_or_reply, get_text
 import os
 
+
 @speedo_on_cmd(
-    ["ahelp", "helper"],
+    ["help", "helper"],
     cmd_help={
         "help": "Gets Help Menu",
-        "example": "{ch}ahelp",
+        "example": "{ch}help",
     },
 )
 async def help(client, message):
@@ -25,7 +26,7 @@ async def help(client, message):
     f_ = await edit_or_reply(message, engine.get_string("PROCESSING"))
     if bot:
         starkbot = bot.me
-        bot_username = os.environ.get("BOT_USERNAME")
+        bot_username = starkbot.username
         try:
             nice = await client.get_inline_bot_results(bot=bot_username, query="help")
             await client.send_inline_bot_result(
@@ -45,6 +46,7 @@ async def help(client, message):
                 await f_.edit(engine.get_string("PLUGIN_NOT_FOUND"))
                 return
             await f_.edit(help_s)
+
 
 
 @speedo_on_cmd(
