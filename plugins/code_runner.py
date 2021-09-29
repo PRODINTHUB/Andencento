@@ -42,7 +42,7 @@ async def eval(client, message):
     cmd = get_text(message)
     user = get_user(message, text_)[0]
     if await is_user_sudo(user.id):
-      return await msg_.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
+      return await stark.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
     if not cmd:
         await stark.edit(engine.get_string("INPUT_REQ").format("Python Code"))
         return
@@ -98,7 +98,7 @@ async def sed_terminal(client, message):
     user = get_user(message, text_)[0]
     stark = await edit_or_reply(message, engine.get_string("WAIT"))
     if await is_user_sudo(user.id):
-      return await msg_.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
+      return await stark.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
     cmd = get_text(message)
     if not cmd:
         await stark.edit(engine.get_string("INPUT_REQ").format("Bash Code"))
