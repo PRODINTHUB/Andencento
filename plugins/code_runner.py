@@ -13,6 +13,7 @@ import traceback
 
 import requests
 
+from database.sudodb import is_user_sudo, sudo_list, add_sudo, rm_sudo
 from main_start.core.decorators import speedo_on_cmd
 from main_start.core.startup_helpers import run_cmd
 from main_start.helper_func.basic_helpers import (
@@ -30,6 +31,8 @@ async def eval(client, message):
     engine = message.Engine
     stark = await edit_or_reply(message, engine.get_string("PROCESSING"))
     cmd = get_text(message)
+    if await is_user_sudo(user.id):
+      return await msg_.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
     if not cmd:
         await stark.edit(engine.get_string("INPUT_REQ").format("Python Code"))
         return
@@ -78,6 +81,8 @@ async def aexec(code, client, message):
 async def sed_terminal(client, message):
     engine = message.Engine
     stark = await edit_or_reply(message, engine.get_string("WAIT"))
+    if await is_user_sudo(user.id):
+      return await msg_.edit(engine.get_string("Sorry! It is sudo restricted command due to security reasons").format(user.mention))
     cmd = get_text(message)
     if not cmd:
         await stark.edit(engine.get_string("INPUT_REQ").format("Bash Code"))
