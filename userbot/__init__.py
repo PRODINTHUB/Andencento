@@ -1,2 +1,3 @@
 if __name__ == "__main__":
-  python3 -m Speedo
+  import os
+  os.system("python3 -m Speedo")
