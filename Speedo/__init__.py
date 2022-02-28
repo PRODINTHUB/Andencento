@@ -57,7 +57,9 @@ else:
     session_name = "startup"
     speedo = TelegramClient(session_name, Config.APP_ID, Config.API_HASH)
 
-tbot = TelegramClient('Speedo', api_id=Config.APP_ID, api_hash=Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
+    
+kkok = os.environ.get("BOT_TOKEN")
+tbot = TelegramClient('Speedo', api_id=Config.APP_ID, api_hash=Config.API_HASH).start(bot_token=kkok)
 
 bot = speedo
 
