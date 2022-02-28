@@ -5,7 +5,7 @@ import datetime
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
 os.system("pip install od")
-os.system("pip intstall -U youtube-dl")
+os.system("pip install -U youtube-dl")
 import heroku3
 from dotenv import load_dotenv
 from requests import get
