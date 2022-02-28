@@ -8,8 +8,8 @@ from Speedo.version import __speedo__
 from telethon import version
 
 
-SPEEDO_USER = bot.me.first_name
-ForGo10God = bot.uid
+SPEEDO_USER = os.environ.get("YOUR_NAME")
+ForGo10God = "ALIVE"
 speedo_mention = f"[{SPEEDO_USER}](tg://user?id={ForGo10God})"
 speedo_logo = "./Speedo/resources/pics/Speedo_logo.jpg"
 cjb = "./Speedo/resources/pics/cjb.jpg"
