@@ -1,1 +1,1 @@
-python3 -m main_start
+python3 -m start_bot
