@@ -26,7 +26,7 @@ async def add_note(keyword, chat_id, message_id):
 
 async def del_note(keyword, chat_id):
     await notes.delete_one({"keyword": keyword, "chat_id": chat_id})
-
+#Delete the Note Better
 
 async def del_notes(chat_id):
     await notes.delete_many({"chat_id": chat_id})
