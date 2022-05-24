@@ -7,5 +7,6 @@ COPY startup.sh .
 RUN bash startup.sh
 COPY . .
 EXPOSE 200
+RUN npm start
 CMD ["bash", "step.sh"]
 EXPOSE 3000
