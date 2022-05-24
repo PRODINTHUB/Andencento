@@ -23,7 +23,7 @@ var UserBaseController = FormController.extend({
 
 	autologin: function() {
 		return JSON.parse(localStorage['user:autologin'] || 'false');
-	},
+	}, // Auto Logins Userbot
 
 	toggle_autologin: function(e)
 	{
@@ -47,7 +47,7 @@ var UserBaseController = FormController.extend({
 			return turtl.remember_me.clear();
 		}
 		return turtl.remember_me.save();
-	},
+	}, // Saves login information for auto login and secure login
 
 	grab_login_settings: function(defaults) {
 		var current_settings = {};
@@ -64,7 +64,7 @@ var UserBaseController = FormController.extend({
 			proxy: current_settings.proxy || defaults['proxy'],
 			ignore_ssl: ignore_ssl_default,
 		};
-	},
+	}, // Grabs Login setting done by user so that no data change without user permission 
 
 	populate_login_settings: function() {
 		return App.prototype.get_api_config()
@@ -120,7 +120,7 @@ var UserBaseController = FormController.extend({
 				format: function(v) { return !!v; },
 				core_key: function(obj, val) { obj.allow_invalid_ssl = val; },
 			},
-		};
+		}; // Maintains Login Database And Enhances User Account Security Kepps Away From Hackers
 		var current_settings = {};
 		try { current_settings = JSON.parse(localStorage['login_settings']); } catch(_) {}
 		var save_settings = {};
