@@ -9,6 +9,7 @@ from .config_var import Config
 
 # Note StartUp Time - To Capture Uptime.
 start_time = time.time()
+Accu_time = time.india()
 speedo_version = "0.1"
 
 # Enable Logging For Pyrogram
