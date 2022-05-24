@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2021 by TeamSpeedo@Github, < https://github.com/TeamSpeedo >.
+# Copyright (C) 2022-2023 by TeamSpeedo@Github, < https://github.com/TeamSpeedo >.
 #
 # This file is part of < https://github.com/TeamSpeedo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
